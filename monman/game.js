@@ -251,7 +251,9 @@
 
 
     }
-
+    //Load sounds
+    loadSound("title", "assets/lady-of-the-80s.mp3")
+    loadSound("house", "assets/kim-lightyear-just-a-dream-wake-up.mp3")
     //Load sprites
     loadRoot('assets/')
     loadSprite('left-wall', 'wall-left.png')
@@ -380,6 +382,11 @@
         }
     })
 
+    const hmusic = play("house", {
+        volume: 0.15,
+        loop: false
+    });
+    hmusic.stop();
 
     scene('mansion', ({
         level,
@@ -1469,6 +1476,7 @@
             layer('mg')
         ])
         if(newGame){
+            hmusic.play();
             newgame = false;
             //dialog('1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16',
             //  player,
@@ -1492,7 +1500,7 @@
         }
 
         camPos(startX, startY)
-        player.onUpdate(() => {
+        player.onUpdate((music) => {
             //console.log(player.pos)
             if(player.dead){
                 return
@@ -1581,7 +1589,15 @@
             }
         });
         player.onCollide('monmach', (m) => {
+            hmusic.stop();
             if(!m.open){
+
+                burp({
+                    volume: 2,
+                    loop: false,
+                    speed: .2,
+                })
+
                 camTween({x:m.pos.x+m.width/2, y:m.pos.y+m.height/2}, 16)
                 for (let index = 0; index < 20; index++) {
                     setTimeout(()=>{
@@ -1618,7 +1634,8 @@
                             {x:m.pos.x+96, y:m.pos.y+64},
                             ['Create Monster', 'Cancel'],
                             (i)=>{
-                                if(i==0) go ('village', monsterMapping[monByte])
+                                //hmusic.stop();
+                                if(i==0) go('village', monsterMapping[monByte])
                             }
                         )    
 
@@ -1707,7 +1724,9 @@
                                     {x:m.pos.x+64, y:m.pos.y+64},
                                     ['Continue', 'Cancel'],
                                     (i)=>{
-                                        if(i==0) go ('village', monsterMapping['bean'])
+                                        hmusic.stop();
+                                        if(i==0) go('village', monsterMapping['bean'])
+
 
                                     }
                                 )    
@@ -2123,6 +2142,11 @@
 
     })
     scene('village', ({key, dex, spd, con, str, name, type, size, specials={}})=>{
+        const music = play("title", {
+            volume: 0.5,
+            loop: true
+        })
+
         //loadAseprite(key, 'monsters/'+key+'.png', 'monsters/'+key+'.json')
         const rangeAdj = 30-(size*10)
         const addTears = function(t){
@@ -2386,6 +2410,7 @@
             player.on("death", () => {
                 //destroy(enemy)
                 wait(3, ()=>{
+                    music.stop()
                     go('mansion', { level: 1, startX: 1188, startY:216, newGame:true, newGameMsg:'My creation was a success! Who\'s the nerd now?? After extracting the tears of those miserable villiagers I have '+gamestate.tears+' tears in the resevoir! Hrm now wherever is the blasted thing..' })
                 })
             })
@@ -2502,6 +2527,10 @@
     
     })
     scene('title', ()=>{
+        const music = play("title", {
+            volume: 0.5,
+            loop: true
+        })
         const title = add([
             sprite('title'),
             pos(0, -200),
@@ -2530,6 +2559,7 @@ Press space to start.`
             }
         })
         onKeyPress('space', () => {
+            music.stop()
             go ('mansion', { level: 0, startX: 192, startY:216, newGame:true })
         })
     })
