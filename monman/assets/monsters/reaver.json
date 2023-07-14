@@ -1,0 +1,385 @@
+{ "frames": [
+   {
+    "filename": "reaver 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 1.aseprite",
+    "frame": { "x": 157, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 2.aseprite",
+    "frame": { "x": 314, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 3.aseprite",
+    "frame": { "x": 471, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 4.aseprite",
+    "frame": { "x": 628, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 5.aseprite",
+    "frame": { "x": 785, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 6.aseprite",
+    "frame": { "x": 942, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 7.aseprite",
+    "frame": { "x": 1099, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 8.aseprite",
+    "frame": { "x": 1256, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 9.aseprite",
+    "frame": { "x": 1413, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 10.aseprite",
+    "frame": { "x": 1570, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 11.aseprite",
+    "frame": { "x": 1727, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 12.aseprite",
+    "frame": { "x": 1884, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 13.aseprite",
+    "frame": { "x": 2041, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 14.aseprite",
+    "frame": { "x": 2198, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 15.aseprite",
+    "frame": { "x": 2355, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 16.aseprite",
+    "frame": { "x": 2512, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 17.aseprite",
+    "frame": { "x": 2669, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 18.aseprite",
+    "frame": { "x": 2826, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 19.aseprite",
+    "frame": { "x": 2983, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 20.aseprite",
+    "frame": { "x": 3140, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 21.aseprite",
+    "frame": { "x": 3297, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 22.aseprite",
+    "frame": { "x": 3454, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 23.aseprite",
+    "frame": { "x": 3611, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 24.aseprite",
+    "frame": { "x": 3768, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 25.aseprite",
+    "frame": { "x": 3925, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 26.aseprite",
+    "frame": { "x": 4082, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 27.aseprite",
+    "frame": { "x": 4239, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 28.aseprite",
+    "frame": { "x": 4396, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 29.aseprite",
+    "frame": { "x": 4553, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 30.aseprite",
+    "frame": { "x": 4710, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 31.aseprite",
+    "frame": { "x": 4867, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 32.aseprite",
+    "frame": { "x": 5024, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 33.aseprite",
+    "frame": { "x": 5181, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 34.aseprite",
+    "frame": { "x": 5338, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 35.aseprite",
+    "frame": { "x": 5495, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 36.aseprite",
+    "frame": { "x": 5652, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 37.aseprite",
+    "frame": { "x": 5809, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 38.aseprite",
+    "frame": { "x": 5966, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   },
+   {
+    "filename": "reaver 39.aseprite",
+    "frame": { "x": 6123, "y": 0, "w": 157, "h": 103 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 157, "h": 103 },
+    "sourceSize": { "w": 157, "h": 103 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.37-x64",
+  "image": "reaver.png",
+  "format": "RGBA8888",
+  "size": { "w": 6280, "h": 103 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 8, "direction": "forward" },
+   { "name": "run", "from": 9, "to": 16, "direction": "forward" },
+   { "name": "attack-1", "from": 17, "to": 21, "direction": "forward" },
+   { "name": "attack-2", "from": 22, "to": 29, "direction": "forward" },
+   { "name": "attack-3", "from": 30, "to": 34, "direction": "forward" },
+   { "name": "jump", "from": 35, "to": 36, "direction": "forward" },
+   { "name": "hit", "from": 37, "to": 39, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

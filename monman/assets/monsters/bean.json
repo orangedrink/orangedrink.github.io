@@ -1,0 +1,412 @@
+{ "frames": [
+   {
+    "filename": "CatKnight 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 1.aseprite",
+    "frame": { "x": 95, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 2.aseprite",
+    "frame": { "x": 190, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 3.aseprite",
+    "frame": { "x": 285, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 4.aseprite",
+    "frame": { "x": 380, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 5.aseprite",
+    "frame": { "x": 475, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 6.aseprite",
+    "frame": { "x": 570, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 7.aseprite",
+    "frame": { "x": 665, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 8.aseprite",
+    "frame": { "x": 760, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 9.aseprite",
+    "frame": { "x": 855, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 10.aseprite",
+    "frame": { "x": 950, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 11.aseprite",
+    "frame": { "x": 1045, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 12.aseprite",
+    "frame": { "x": 1140, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 13.aseprite",
+    "frame": { "x": 1235, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 14.aseprite",
+    "frame": { "x": 1330, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 15.aseprite",
+    "frame": { "x": 1425, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 16.aseprite",
+    "frame": { "x": 1520, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 17.aseprite",
+    "frame": { "x": 1615, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 18.aseprite",
+    "frame": { "x": 1710, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 19.aseprite",
+    "frame": { "x": 1805, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 20.aseprite",
+    "frame": { "x": 1900, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 21.aseprite",
+    "frame": { "x": 1995, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 22.aseprite",
+    "frame": { "x": 2090, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 23.aseprite",
+    "frame": { "x": 2185, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 24.aseprite",
+    "frame": { "x": 2280, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 25.aseprite",
+    "frame": { "x": 2375, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 26.aseprite",
+    "frame": { "x": 2470, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 27.aseprite",
+    "frame": { "x": 2565, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 28.aseprite",
+    "frame": { "x": 2660, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 29.aseprite",
+    "frame": { "x": 2755, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 30.aseprite",
+    "frame": { "x": 2850, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 31.aseprite",
+    "frame": { "x": 2945, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 32.aseprite",
+    "frame": { "x": 3040, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 33.aseprite",
+    "frame": { "x": 3135, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 34.aseprite",
+    "frame": { "x": 3230, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 35.aseprite",
+    "frame": { "x": 3325, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 36.aseprite",
+    "frame": { "x": 3420, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 37.aseprite",
+    "frame": { "x": 3515, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 38.aseprite",
+    "frame": { "x": 3610, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 39.aseprite",
+    "frame": { "x": 3705, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 40.aseprite",
+    "frame": { "x": 3800, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 41.aseprite",
+    "frame": { "x": 3895, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   },
+   {
+    "filename": "CatKnight 42.aseprite",
+    "frame": { "x": 3990, "y": 0, "w": 95, "h": 47 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 95, "h": 47 },
+    "sourceSize": { "w": 95, "h": 47 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.37-x64",
+  "image": "bean.png",
+  "format": "RGBA8888",
+  "size": { "w": 4085, "h": 47 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 7, "direction": "forward" },
+   { "name": "attack-1", "from": 8, "to": 11, "direction": "forward" },
+   { "name": "attack-2", "from": 12, "to": 15, "direction": "forward" },
+   { "name": "attack-3", "from": 16, "to": 19, "direction": "forward" },
+   { "name": "run", "from": 20, "to": 29, "direction": "forward" },
+   { "name": "jump", "from": 30, "to": 31, "direction": "forward" },
+   { "name": "hit", "from": 32, "to": 33, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

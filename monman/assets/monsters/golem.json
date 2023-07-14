@@ -1,0 +1,430 @@
+{ "frames": [
+   {
+    "filename": "golem 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 1.aseprite",
+    "frame": { "x": 166, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 2.aseprite",
+    "frame": { "x": 332, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 3.aseprite",
+    "frame": { "x": 498, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 4.aseprite",
+    "frame": { "x": 664, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 5.aseprite",
+    "frame": { "x": 830, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 6.aseprite",
+    "frame": { "x": 996, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 7.aseprite",
+    "frame": { "x": 1162, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 8.aseprite",
+    "frame": { "x": 1328, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 9.aseprite",
+    "frame": { "x": 1494, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 10.aseprite",
+    "frame": { "x": 1660, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 11.aseprite",
+    "frame": { "x": 1826, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 12.aseprite",
+    "frame": { "x": 1992, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 13.aseprite",
+    "frame": { "x": 2158, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 14.aseprite",
+    "frame": { "x": 2324, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 15.aseprite",
+    "frame": { "x": 2490, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 16.aseprite",
+    "frame": { "x": 2656, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 17.aseprite",
+    "frame": { "x": 2822, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 18.aseprite",
+    "frame": { "x": 2988, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 19.aseprite",
+    "frame": { "x": 3154, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 20.aseprite",
+    "frame": { "x": 3320, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 21.aseprite",
+    "frame": { "x": 3486, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 22.aseprite",
+    "frame": { "x": 3652, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 23.aseprite",
+    "frame": { "x": 3818, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 24.aseprite",
+    "frame": { "x": 3984, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 25.aseprite",
+    "frame": { "x": 4150, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 26.aseprite",
+    "frame": { "x": 4316, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 27.aseprite",
+    "frame": { "x": 4482, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 28.aseprite",
+    "frame": { "x": 4648, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 29.aseprite",
+    "frame": { "x": 4814, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 30.aseprite",
+    "frame": { "x": 4980, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 31.aseprite",
+    "frame": { "x": 5146, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 32.aseprite",
+    "frame": { "x": 5312, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 33.aseprite",
+    "frame": { "x": 5478, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 34.aseprite",
+    "frame": { "x": 5644, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 35.aseprite",
+    "frame": { "x": 5810, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 36.aseprite",
+    "frame": { "x": 5976, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 37.aseprite",
+    "frame": { "x": 6142, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 38.aseprite",
+    "frame": { "x": 6308, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 39.aseprite",
+    "frame": { "x": 6474, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 40.aseprite",
+    "frame": { "x": 6640, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 41.aseprite",
+    "frame": { "x": 6806, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 42.aseprite",
+    "frame": { "x": 6972, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 43.aseprite",
+    "frame": { "x": 7138, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   },
+   {
+    "filename": "golem 44.aseprite",
+    "frame": { "x": 7304, "y": 0, "w": 166, "h": 115 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 166, "h": 115 },
+    "sourceSize": { "w": 166, "h": 115 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.37-x64",
+  "image": "golem.png",
+  "format": "RGBA8888",
+  "size": { "w": 7470, "h": 115 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 9, "direction": "forward" },
+   { "name": "run", "from": 10, "to": 17, "direction": "forward" },
+   { "name": "attack-1", "from": 18, "to": 23, "direction": "forward" },
+   { "name": "attack-2", "from": 24, "to": 34, "direction": "forward" },
+   { "name": "attack-3", "from": 35, "to": 38, "direction": "forward" },
+   { "name": "hit", "from": 39, "to": 41, "direction": "forward" },
+   { "name": "jump", "from": 42, "to": 44, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

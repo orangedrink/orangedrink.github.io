@@ -1,0 +1,376 @@
+{ "frames": [
+   {
+    "filename": "troll 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 1.aseprite",
+    "frame": { "x": 101, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 2.aseprite",
+    "frame": { "x": 202, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 3.aseprite",
+    "frame": { "x": 303, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 4.aseprite",
+    "frame": { "x": 404, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 5.aseprite",
+    "frame": { "x": 505, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 6.aseprite",
+    "frame": { "x": 606, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 7.aseprite",
+    "frame": { "x": 707, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 8.aseprite",
+    "frame": { "x": 808, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 9.aseprite",
+    "frame": { "x": 909, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 10.aseprite",
+    "frame": { "x": 1010, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 11.aseprite",
+    "frame": { "x": 1111, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 12.aseprite",
+    "frame": { "x": 1212, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 13.aseprite",
+    "frame": { "x": 1313, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 14.aseprite",
+    "frame": { "x": 1414, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 15.aseprite",
+    "frame": { "x": 1515, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 16.aseprite",
+    "frame": { "x": 1616, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 17.aseprite",
+    "frame": { "x": 1717, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 18.aseprite",
+    "frame": { "x": 1818, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 19.aseprite",
+    "frame": { "x": 1919, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 20.aseprite",
+    "frame": { "x": 2020, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 21.aseprite",
+    "frame": { "x": 2121, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 22.aseprite",
+    "frame": { "x": 2222, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 23.aseprite",
+    "frame": { "x": 2323, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 24.aseprite",
+    "frame": { "x": 2424, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 25.aseprite",
+    "frame": { "x": 2525, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 26.aseprite",
+    "frame": { "x": 2626, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 27.aseprite",
+    "frame": { "x": 2727, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 28.aseprite",
+    "frame": { "x": 2828, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 29.aseprite",
+    "frame": { "x": 2929, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 30.aseprite",
+    "frame": { "x": 3030, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 31.aseprite",
+    "frame": { "x": 3131, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 32.aseprite",
+    "frame": { "x": 3232, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 33.aseprite",
+    "frame": { "x": 3333, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 34.aseprite",
+    "frame": { "x": 3434, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 35.aseprite",
+    "frame": { "x": 3535, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 36.aseprite",
+    "frame": { "x": 3636, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 37.aseprite",
+    "frame": { "x": 3737, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   },
+   {
+    "filename": "troll 38.aseprite",
+    "frame": { "x": 3838, "y": 0, "w": 101, "h": 99 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 101, "h": 99 },
+    "sourceSize": { "w": 101, "h": 99 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.37-x64",
+  "image": "troll.png",
+  "format": "RGBA8888",
+  "size": { "w": 3939, "h": 99 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 7, "direction": "forward" },
+   { "name": "run", "from": 8, "to": 15, "direction": "forward" },
+   { "name": "attack-1", "from": 16, "to": 19, "direction": "forward" },
+   { "name": "attack-3", "from": 20, "to": 25, "direction": "forward" },
+   { "name": "attack-2", "from": 26, "to": 33, "direction": "forward" },
+   { "name": "hit", "from": 34, "to": 36, "direction": "forward" },
+   { "name": "jump", "from": 37, "to": 38, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

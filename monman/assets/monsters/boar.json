@@ -1,0 +1,502 @@
+{ "frames": [
+   {
+    "filename": "BoarWarrior_Idle_0 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 1.aseprite",
+    "frame": { "x": 97, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 2.aseprite",
+    "frame": { "x": 194, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 3.aseprite",
+    "frame": { "x": 291, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 4.aseprite",
+    "frame": { "x": 388, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 5.aseprite",
+    "frame": { "x": 485, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 6.aseprite",
+    "frame": { "x": 582, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 7.aseprite",
+    "frame": { "x": 679, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 8.aseprite",
+    "frame": { "x": 776, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 9.aseprite",
+    "frame": { "x": 873, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 10.aseprite",
+    "frame": { "x": 970, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 11.aseprite",
+    "frame": { "x": 1067, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 12.aseprite",
+    "frame": { "x": 1164, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 13.aseprite",
+    "frame": { "x": 1261, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 14.aseprite",
+    "frame": { "x": 1358, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 15.aseprite",
+    "frame": { "x": 1455, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 16.aseprite",
+    "frame": { "x": 1552, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 17.aseprite",
+    "frame": { "x": 1649, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 18.aseprite",
+    "frame": { "x": 1746, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 19.aseprite",
+    "frame": { "x": 1843, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 20.aseprite",
+    "frame": { "x": 1940, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 21.aseprite",
+    "frame": { "x": 2037, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 22.aseprite",
+    "frame": { "x": 2134, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 23.aseprite",
+    "frame": { "x": 2231, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 24.aseprite",
+    "frame": { "x": 2328, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 25.aseprite",
+    "frame": { "x": 2425, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 26.aseprite",
+    "frame": { "x": 2522, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 27.aseprite",
+    "frame": { "x": 2619, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 28.aseprite",
+    "frame": { "x": 2716, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 29.aseprite",
+    "frame": { "x": 2813, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 30.aseprite",
+    "frame": { "x": 2910, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 31.aseprite",
+    "frame": { "x": 3007, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 32.aseprite",
+    "frame": { "x": 3104, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 33.aseprite",
+    "frame": { "x": 3201, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 34.aseprite",
+    "frame": { "x": 3298, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 35.aseprite",
+    "frame": { "x": 3395, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 36.aseprite",
+    "frame": { "x": 3492, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 37.aseprite",
+    "frame": { "x": 3589, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 38.aseprite",
+    "frame": { "x": 3686, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 39.aseprite",
+    "frame": { "x": 3783, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 40.aseprite",
+    "frame": { "x": 3880, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 41.aseprite",
+    "frame": { "x": 3977, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 42.aseprite",
+    "frame": { "x": 4074, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 43.aseprite",
+    "frame": { "x": 4171, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 44.aseprite",
+    "frame": { "x": 4268, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 45.aseprite",
+    "frame": { "x": 4365, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 46.aseprite",
+    "frame": { "x": 4462, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 47.aseprite",
+    "frame": { "x": 4559, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 48.aseprite",
+    "frame": { "x": 4656, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 49.aseprite",
+    "frame": { "x": 4753, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 50.aseprite",
+    "frame": { "x": 4850, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 51.aseprite",
+    "frame": { "x": 4947, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   },
+   {
+    "filename": "BoarWarrior_Idle_0 52.aseprite",
+    "frame": { "x": 5044, "y": 0, "w": 97, "h": 76 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 97, "h": 76 },
+    "sourceSize": { "w": 97, "h": 76 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.37-x64",
+  "image": "boar.png",
+  "format": "RGBA8888",
+  "size": { "w": 5141, "h": 76 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 9, "direction": "forward" },
+   { "name": "attack-1", "from": 10, "to": 17, "direction": "forward" },
+   { "name": "attack-2", "from": 18, "to": 31, "direction": "forward" },
+   { "name": "attack-3", "from": 32, "to": 38, "direction": "forward" },
+   { "name": "run", "from": 39, "to": 48, "direction": "forward" },
+   { "name": "jump", "from": 49, "to": 50, "direction": "forward" },
+   { "name": "hit", "from": 51, "to": 52, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

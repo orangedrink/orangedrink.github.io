@@ -1,0 +1,114 @@
+{ "frames": [
+   {
+    "filename": "monster machine anim 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 3000
+   },
+   {
+    "filename": "monster machine anim 1.aseprite",
+    "frame": { "x": 192, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 2.aseprite",
+    "frame": { "x": 384, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 3.aseprite",
+    "frame": { "x": 576, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 4.aseprite",
+    "frame": { "x": 768, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 5.aseprite",
+    "frame": { "x": 960, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 6.aseprite",
+    "frame": { "x": 1152, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 3000
+   },
+   {
+    "filename": "monster machine anim 7.aseprite",
+    "frame": { "x": 1344, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 8.aseprite",
+    "frame": { "x": 1536, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 9.aseprite",
+    "frame": { "x": 1728, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   },
+   {
+    "filename": "monster machine anim 10.aseprite",
+    "frame": { "x": 1920, "y": 0, "w": 192, "h": 192 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 192, "h": 192 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.35-x64",
+  "image": "monmach.png",
+  "format": "RGBA8888",
+  "size": { "w": 2112, "h": 192 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "open", "from": 1, "to": 6, "direction": "forward" }
+  ]
+ }
+}

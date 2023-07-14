@@ -1,0 +1,214 @@
+{ "frames": [
+   {
+    "filename": "ghoulies 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 1.aseprite",
+    "frame": { "x": 28, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 2.aseprite",
+    "frame": { "x": 56, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 3.aseprite",
+    "frame": { "x": 84, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 4.aseprite",
+    "frame": { "x": 112, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 5.aseprite",
+    "frame": { "x": 140, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 6.aseprite",
+    "frame": { "x": 168, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 7.aseprite",
+    "frame": { "x": 196, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 8.aseprite",
+    "frame": { "x": 224, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 9.aseprite",
+    "frame": { "x": 252, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 10.aseprite",
+    "frame": { "x": 280, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 11.aseprite",
+    "frame": { "x": 308, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 12.aseprite",
+    "frame": { "x": 336, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 13.aseprite",
+    "frame": { "x": 364, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 14.aseprite",
+    "frame": { "x": 392, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 15.aseprite",
+    "frame": { "x": 420, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 16.aseprite",
+    "frame": { "x": 448, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 17.aseprite",
+    "frame": { "x": 476, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 18.aseprite",
+    "frame": { "x": 504, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 10000
+   },
+   {
+    "filename": "ghoulies 19.aseprite",
+    "frame": { "x": 532, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 100
+   },
+   {
+    "filename": "ghoulies 20.aseprite",
+    "frame": { "x": 560, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 38 },
+    "sourceSize": { "w": 28, "h": 38 },
+    "duration": 10000
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.37-x64",
+  "image": "ghoulies.png",
+  "format": "RGBA8888",
+  "size": { "w": 588, "h": 38 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "walk-s", "from": 1, "to": 4, "direction": "forward" },
+   { "name": "walk-w", "from": 5, "to": 8, "direction": "forward" },
+   { "name": "walk-e", "from": 9, "to": 12, "direction": "forward" },
+   { "name": "walk-n", "from": 13, "to": 16, "direction": "forward" },
+   { "name": "throw-e", "from": 17, "to": 18, "direction": "forward" },
+   { "name": "throw-w", "from": 19, "to": 20, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

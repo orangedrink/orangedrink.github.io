@@ -1,0 +1,286 @@
+{ "frames": [
+   {
+    "filename": "mushroom 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 1.aseprite",
+    "frame": { "x": 110, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 2.aseprite",
+    "frame": { "x": 220, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 3.aseprite",
+    "frame": { "x": 330, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 4.aseprite",
+    "frame": { "x": 440, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 5.aseprite",
+    "frame": { "x": 550, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 6.aseprite",
+    "frame": { "x": 660, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 7.aseprite",
+    "frame": { "x": 770, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 8.aseprite",
+    "frame": { "x": 880, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 9.aseprite",
+    "frame": { "x": 990, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 10.aseprite",
+    "frame": { "x": 1100, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 11.aseprite",
+    "frame": { "x": 1210, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 12.aseprite",
+    "frame": { "x": 1320, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 13.aseprite",
+    "frame": { "x": 1430, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 14.aseprite",
+    "frame": { "x": 1540, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 15.aseprite",
+    "frame": { "x": 1650, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 16.aseprite",
+    "frame": { "x": 1760, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 17.aseprite",
+    "frame": { "x": 1870, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 18.aseprite",
+    "frame": { "x": 1980, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 19.aseprite",
+    "frame": { "x": 2090, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 20.aseprite",
+    "frame": { "x": 2200, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 21.aseprite",
+    "frame": { "x": 2310, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 22.aseprite",
+    "frame": { "x": 2420, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 23.aseprite",
+    "frame": { "x": 2530, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 24.aseprite",
+    "frame": { "x": 2640, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 25.aseprite",
+    "frame": { "x": 2750, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 26.aseprite",
+    "frame": { "x": 2860, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 27.aseprite",
+    "frame": { "x": 2970, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   },
+   {
+    "filename": "mushroom 28.aseprite",
+    "frame": { "x": 3080, "y": 0, "w": 110, "h": 46 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 110, "h": 46 },
+    "sourceSize": { "w": 110, "h": 46 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.37-x64",
+  "image": "mushroom.png",
+  "format": "RGBA8888",
+  "size": { "w": 3190, "h": 46 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 3, "direction": "forward" },
+   { "name": "run", "from": 4, "to": 10, "direction": "forward" },
+   { "name": "attack-1", "from": 11, "to": 14, "direction": "forward" },
+   { "name": "attack-2", "from": 15, "to": 20, "direction": "forward" },
+   { "name": "attack-3", "from": 21, "to": 24, "direction": "forward" },
+   { "name": "jump", "from": 25, "to": 26, "direction": "forward" },
+   { "name": "hit", "from": 27, "to": 28, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer Copy", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
