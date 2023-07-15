@@ -2146,7 +2146,7 @@
     scene('village', ({key, dex, spd, con, str, name, type, size, specials={}})=>{
         const music = play("title", {
             volume: 0.5,
-            loop: true
+            loop: false
         })
 
         //loadAseprite(key, 'monsters/'+key+'.png', 'monsters/'+key+'.json')
