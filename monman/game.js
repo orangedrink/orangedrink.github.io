@@ -435,7 +435,7 @@
                 '                         aiib',
             ],
             [
-                '         + + + + ',
+                '         + ` + ~ ',
                 '  + + F yccccccccw E + + + + J + +',
                 'yccccccceiiiiiiiifcccccccccccccccccw',
                 'aiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiib',
@@ -1328,10 +1328,10 @@
                 dialog('Volume V: Monster Byte Bit 4 Settings and Corresponding Monster Types\nSkeleton\t0\nBoar\t0\nBeast\t0\nMushroom\t0\ntroll\t0\nreaver\t0\nDraconian\t0\nelemental\t1\niron Golem\t1\nGiant mushroom\t1\nGiant troll\t1\nGiant Beast\t1\nGiant Boar\t1\nDragonman\t1\nGiant Iron Golem\t1', player, player.pos)
             },
             'appendixa': ()=>{
-                dialog('Appendix A: Other features and settings\n\n', player, player.pos)
+                dialog('Appendix A: Other features and settings\n\nYou model is equiped with a tissue scanner and transmogrifier. Living creatures can be replicated and used a basis for a monster privided that sufficient power is supplied. See breakers under Appendix B', player, player.pos)
             },
             'appendixb': ()=>{
-                dialog('Appendix B: Power and Maintenance\n\n', player, player.pos)
+                dialog('Appendix B: Power and Maintenance\n\nTo enable some features please supply full power to the unit. Any breakers must be thrown.', player, player.pos)
             },
             'note': ()=>{
                 dialog('A old note written in messy handwriting\n\n"Right, Up, Up, Left, Right"', player, player.pos)
@@ -1376,6 +1376,8 @@
             F: () => [sprite('bookshelf'), layer('bg'), layer('mg'), area(), solid(), 'book', {book: 'bit1'}],
             G: () => [sprite('bookshelf'), layer('bg'), layer('mg'), area(), solid(), 'book', {book: 'bit2'}],
             H: () => [sprite('bookshelf'), layer('bg'), layer('mg'), area(), solid(), 'book', {book: 'bit3'}],
+            '`': () => [sprite('bookshelf'), layer('bg'), layer('mg'), area(), solid(), 'book', {book: 'appendixa'}],
+            '~': () => [sprite('bookshelf'), layer('bg'), layer('mg'), area(), solid(), 'book', {book: 'appendixb'}],
             I: () => [sprite('column'), layer('mg'), area(), solid(), 'replace'],
             J: () => [sprite('bookshelf'), layer('mg'), area(), solid(), 'book', {book: 'bit4'}],
             K: () => [sprite('couch'), layer('mg'), area(), solid(), 'replace-wall'],
@@ -2564,4 +2566,9 @@ Press space to start.`
         })
     })
     //go('village', monsterMapping['0100'])
-    go('title')
+    if(window.innerWidth<900){
+        alert('Desktop Only')
+    } else{
+        go('title')
+    }
+
