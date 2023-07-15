@@ -2195,7 +2195,7 @@
                     if(Math.abs(e.pos.x-player.pos.x)<200&&Math.abs(e.pos.y-player.pos.y)<150){
                         e.count++
                         console.log(e.timer)
-                        e.timer = rand(7-dex)+(2-(dex/2))
+                        e.timer = rand(7-dex)+(4-(dex/2))
                         e.play('open', {loop:false, speed:30})
                         wait(.25, ()=>{
                             //console.log(count)
