@@ -2567,7 +2567,9 @@ Press space to start.`
     })
     //go('village', monsterMapping['0100'])
     //alert(window.innerWidth)
-    if(parseInt(window.innerWidth)<1000){
+    if(('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    (navigator.msMaxTouchPoints > 0)){
         alert('Desktop Only')
     } else{
         go('title')
