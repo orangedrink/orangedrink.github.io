@@ -2570,7 +2570,8 @@ Press space to start.`
     if(('ontouchstart' in window) ||
     (navigator.maxTouchPoints > 0) ||
     (navigator.msMaxTouchPoints > 0)){
-        alert('Desktop Only')
+        alert('This game is available on Desktop Only')
+        window.location.href = '..'
     } else{
         go('title')
     }
