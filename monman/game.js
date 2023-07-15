@@ -382,11 +382,11 @@
         }
     })
 
-    const hmusic = play("house", {
-        volume: 0.15,
-        loop: false
-    });
-    hmusic.stop();
+    let hmusic// = play("house", {
+    //    volume: 0.15,
+    //    loop: false
+    //});
+    //hmusic.pause();
 
     scene('mansion', ({
         level,
@@ -1478,7 +1478,10 @@
             layer('mg')
         ])
         if(newGame){
-            hmusic.play();
+            hmusic = play("house", {
+                volume: 0.15,
+                loop: false
+            });
             newgame = false;
             //dialog('1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16',
             //  player,
