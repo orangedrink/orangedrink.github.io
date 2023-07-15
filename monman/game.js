@@ -2545,7 +2545,7 @@
                 title.pos.y+=.5;
             } 
         })
-        const message = `You are The Doctor, an evil, immortal being that lives high above the villagers in the Monster Mansion. You must solve the riddles of the mansion to configure the Monster Maker Machine and unleash a unique playable creature on the villagers below. Extract the misery of the villiagers to fill the Resevoir of Tears and expand your own magical powers.
+        const message = `You are The Doctor, an evil, immortal being that lives high above the villagers in the Monster Mansion. You must solve the riddles of the mansion to configure the Monster Maker Machine and unleash a unique playable creature on the villagers below. Extract the misery of the villagers to fill the Reservoir of Tears and expand your own magical powers.
         
 Press space to start.`
         const titletext = add([
