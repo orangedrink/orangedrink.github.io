@@ -2556,7 +2556,7 @@ Use the arrow keys to move and space for spells or attack.
 
 Press space to continue.`
         const cmessage = `CREDITS
-Title screen image: Reddit user u/markiin05`
+Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         
         const instructiontext = add([
             text(imessage,{
