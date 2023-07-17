@@ -2548,25 +2548,148 @@
                 title.pos.y+=.5;
             } 
         })
-        const message = `You are The Doctor, an evil, immortal being that lives high above the villagers in the Monster Mansion. You must solve the riddles of the mansion to configure the Monster Maker Machine and unleash a unique playable creature on the villagers below. Extract the misery of the villagers to fill the Reservoir of Tears and expand your own magical powers.
+        const message = "Use the arrow keys and spacebar to select an option."
+        const imessage = `INSTRUCTIONS
+You are The Doctor, an evil, immortal being that lives high above the villagers in the Monster Mansion. You must solve the riddles of the mansion to configure the Monster Maker Machine and unleash a unique playable creature on the villagers below. Extract the misery of the villagers to fill the Reservoir of Tears and expand your own magical powers.
+
+Use the arrow keys to move and space for spells or attack.        
+
+Press space to continue.`
+        const cmessage = `CREDITS
+Title screen image: Reddit user u/markiin05`
         
-Press space to start.`
-        const titletext = add([
-            text(message,{
-                size: 16,
+        const instructiontext = add([
+            text(imessage,{
+                size: 12,
                 width:350
             }),
-            pos(10,300),
+            pos(-1000, 10),
         ])
-        titletext.onUpdate(()=>{
-            if(titletext.pos.y>10){
-                titletext.pos.y-=.25;
+        instructiontext.onUpdate(()=>{
+            if(instructiontext.pos.y>10){
+                instructiontext.pos.y-=60;
+            }else{
+                instructiontext.pos.y=10;
             }
         })
-        onKeyPress('space', () => {
-            music.stop()
-            go ('mansion', { level: 0, startX: 192, startY:216, newGame:true })
+        const credittext = add([
+            text(cmessage,{
+                size: 12,
+                width:350
+            }),
+            pos(-1000, 10),
+        ])
+        credittext.onUpdate(()=>{
+            if(credittext.pos.y>10){
+                credittext.pos.y-=60;
+            }else{
+                credittext.pos.y=10;
+            }
         })
+                                
+        //onKeyPress('space', () => {
+        //    music.stop()
+        //    go ('mansion', { level: 0, startX: 192, startY:216, newGame:true })
+        //})
+        const t = []
+        let selected = 0;
+        let cursor
+        let ichoices = ["Start", "Instructions", "Credits"]
+        let p = {x:175, y:230}
+        onKeyPress('up', () => {
+            keystate = 'up'
+        })
+        onKeyPress('down', () => {
+            keystate = 'down'
+        })
+        onKeyPress('space', () => {
+            if(!dialogOpen){
+                keystate = ''
+                instructiontext.moveTo(-1000,10)
+                credittext.moveTo(-1000,10)
+                showMenu(ichoices)
+            }else{
+                keystate = 'space'
+            }
+        })
+        function showMenu(choices){
+            dialogOpen = true
+            t.push(add([
+                text(message,{
+                    size: 12,
+                    width:300
+                }),
+                pos(p.x, p.y-(choices&&choices.length?40:8)),
+                origin('center')
+            ]))
+            if(choices&&choices.length){
+                cursor = add([
+                    text('>>>',
+                    {
+                        size: 12,
+                        width:300
+                    }),
+                    pos(p.x-70, p.y+((12*selected))),
+                    origin('center')
+                ])
+                t.push(cursor)
+                choices.forEach((choice, i)=>{
+                    t.push(add([
+                        text(choice ,{
+                            size: 12,
+                            width:300
+                        }),
+                        pos(p.x, p.y+((12*i))),
+                        origin('center')
+                    ]))
+                })
+            }
+            wait(.5,()=>{
+                keystate=''
+                let keyInterval = setInterval(()=>{
+                    if(cursor){
+                        cursor.moveTo(p.x-70, p.y+((12*selected)))
+                    }else{
+                        console.log('Cursor not found')
+                    }
+                    if(keystate == 'down'){
+                        keystate =''
+                        selected++
+                        if(choices && selected == choices.length){
+                            selected = 0
+                        }
+                    }else if(keystate == 'up'){
+                        keystate =''
+                        selected--
+                        if(selected < 0 && choices){
+                            selected = choices.length-1
+                        }
+                    }else if(keystate == 'space'){
+                        keystate =''
+                        clearInterval(keyInterval)
+                        //destroy(b)
+                        t.forEach(t=>{
+                            destroy(t)
+                        })
+                        wait(.1,()=>{
+                            dialogOpen = false
+                            console.log(selected)
+                            if(selected===0){
+                                go ('mansion', { level: 0, startX: 192, startY:216, newGame:true })
+                            }else if(selected===1){
+                                dialogOpen = false
+                                instructiontext.moveTo(10,310)
+                            }else if(selected===2){
+                                dialogOpen = false
+                                credittext.moveTo(10,310)
+                            }
+                        })
+                    } else {
+                    }
+                }, 1) 
+            })
+        }
+        showMenu(ichoices)
     })
     //go('village', monsterMapping['0100'])
     //if(('ontouchstart' in window) ||
