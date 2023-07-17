@@ -2569,12 +2569,12 @@ Press space to start.`
         })
     })
     //go('village', monsterMapping['0100'])
-    if(('ontouchstart' in window) ||
-    (navigator.maxTouchPoints > 0) ||
-    (navigator.msMaxTouchPoints > 0)){
-        alert('This game is available on Desktop Only')
-        window.location.href = '..'
-    } else{
+    //if(('ontouchstart' in window) ||
+    //(navigator.maxTouchPoints > 0) ||
+    //(navigator.msMaxTouchPoints > 0)){
+    //    alert('This game is available on Desktop Only')
+    //    window.location.href = '..'
+    //} else{
         go('title')
-    }
+    //}
 
