@@ -2597,7 +2597,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         let selected = 0;
         let cursor
         let ichoices = ["Start", "Instructions", "Credits"]
-        let p = {x:175, y:250}
+        let p = {x:260, y:250}
         onKeyPress('up', () => {
             keystate = 'up'
         })
@@ -2609,22 +2609,22 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
                 keystate = ''
                 instructiontext.moveTo(-1000,10)
                 credittext.moveTo(-1000,10)
-                showMenu(ichoices)
+                showMenu(ichoices, true)
             }else{
                 keystate = 'space'
             }
         })
-        function showMenu(choices){
+        function showMenu(choices, firstTime){
             dialogOpen = true
             const logo = add([
                 sprite('logo'),
-                pos(35,400),
-                scale(1.5),
+                pos(100,firstTime?-10:400),
+                scale(1.75),
 
 
             ])
             logo.onUpdate(()=>{
-                if(logo.pos.y>15){
+                if(logo.pos.y>-25){
                     logo.pos.y-=.5;
                 }
             })
