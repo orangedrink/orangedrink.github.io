@@ -256,6 +256,7 @@
     loadSound("house", "assets/kim-lightyear-just-a-dream-wake-up.mp3")
     //Load sprites
     loadRoot('assets/')
+    loadSprite('logo', 'Logo.png')
     loadSprite('left-wall', 'wall-left.png')
     loadSprite('left-wall', 'wall-left.png')
     loadSprite('top-wall', 'wall-top.png')
@@ -2545,7 +2546,7 @@
         title.onUpdate(()=>{
             title.opacity+=.01
             if(title.pos.y<0){
-                title.pos.y+=.5;
+                title.pos.y+=.25;
             } 
         })
         const message = "Use the arrow keys and spacebar to select an option."
@@ -2578,6 +2579,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
                 width:350
             }),
             pos(-1000, 10),
+            
         ])
         credittext.onUpdate(()=>{
             if(credittext.pos.y>10){
@@ -2595,7 +2597,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         let selected = 0;
         let cursor
         let ichoices = ["Start", "Instructions", "Credits"]
-        let p = {x:175, y:230}
+        let p = {x:175, y:250}
         onKeyPress('up', () => {
             keystate = 'up'
         })
@@ -2614,6 +2616,19 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         })
         function showMenu(choices){
             dialogOpen = true
+            const logo = add([
+                sprite('logo'),
+                pos(35,400),
+                scale(1.5),
+
+
+            ])
+            logo.onUpdate(()=>{
+                if(logo.pos.y>15){
+                    logo.pos.y-=.5;
+                }
+            })
+    
             t.push(add([
                 text(message,{
                     size: 12,
@@ -2678,9 +2693,11 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
                                 go ('mansion', { level: 0, startX: 192, startY:216, newGame:true })
                             }else if(selected===1){
                                 dialogOpen = false
+                                destroy(logo)
                                 instructiontext.moveTo(10,310)
                             }else if(selected===2){
                                 dialogOpen = false
+                                destroy(logo)
                                 credittext.moveTo(10,310)
                             }
                         })
