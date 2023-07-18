@@ -2602,7 +2602,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         let selected = 0;
         let cursor
         let ichoices = ["Start", "Instructions", "Credits"]
-        let p = {x:center().x, y:250}
+        let p = {x:center().x+5, y:250}
         onKeyPress('up', () => {
             keystate = 'up'
         })
@@ -2623,7 +2623,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
             dialogOpen = true
             const logo = add([
                 sprite('logo'),
-                pos(center().x,firstTime?-100:700*tscale),
+                pos(center().x,firstTime?300*tscale:870*tscale),
                 scale(tscale*3),
                 origin('center')
             ])
