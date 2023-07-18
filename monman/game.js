@@ -2533,16 +2533,19 @@
     
     })
     scene('title', ()=>{
-        let offset = (500-width())/4
-        console.log(offset)
+        let offset = width()*.3
+        let tscale = width() / 1000
+        console.log(window.innerWidth)
+        console.log(width())
+        console.log(tscale)
         const music = play("title", {
             volume: 0.5,
             loop: true
         })
         const title = add([
             sprite('title'),
-            pos(offset, -200),
-            scale(.75),
+            pos(0, -200),
+            scale(tscale),
             opacity(0)
         ])
         title.onUpdate(()=>{
@@ -2599,7 +2602,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         let selected = 0;
         let cursor
         let ichoices = ["Start", "Instructions", "Credits"]
-        let p = {x:offset+320, y:250}
+        let p = {x:center().x, y:250}
         onKeyPress('up', () => {
             keystate = 'up'
         })
@@ -2620,13 +2623,12 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
             dialogOpen = true
             const logo = add([
                 sprite('logo'),
-                pos(offset+160,firstTime?-10:400),
-                scale(1.75),
-
-
+                pos(center().x,firstTime?-100:700*tscale),
+                scale(tscale*3),
+                origin('center')
             ])
             logo.onUpdate(()=>{
-                if(logo.pos.y>-25){
+                if(logo.pos.y>190){
                     logo.pos.y-=.5;
                 }
             })
