@@ -1330,13 +1330,13 @@
                 dialog('Volume V: Monster Byte Bit 4 Settings and Corresponding Monster Types\nSkeleton\t0\nBoar\t0\nBeast\t0\nMushroom\t0\ntroll\t0\nreaver\t0\nDraconian\t0\nelemental\t1\niron Golem\t1\nGiant mushroom\t1\nGiant troll\t1\nGiant Beast\t1\nGiant Boar\t1\nDragonman\t1\nGiant Iron Golem\t1', player, player.pos)
             },
             'appendixa': ()=>{
-                dialog('Appendix A: Other features and settings\n\nYou model is equiped with a tissue scanner and transmogrifier. Living creatures can be replicated and used a basis for a monster privided that sufficient power is supplied. See breakers under Appendix B', player, player.pos)
+                dialog('Appendix A: Other features and settings\n\nYour model is equiped with a tissue scanner and transmogrifier. Living creatures can be replicated and used a basis for a monster privided that sufficient power is supplied. See breakers under Appendix B', player, player.pos)
             },
             'appendixb': ()=>{
                 dialog('Appendix B: Power and Maintenance\n\nTo enable some features please supply full power to the unit. Any breakers must be thrown.', player, player.pos)
             },
             'note': ()=>{
-                dialog('A old note written in messy handwriting\n\n"Right, Up, Up, Left, Right"', player, player.pos)
+                dialog('A old note written in messy handwriting\n\n"Directions: Right, Up, Up, Left, Right"', player, player.pos)
             },
         }
         const levelCfg = {
