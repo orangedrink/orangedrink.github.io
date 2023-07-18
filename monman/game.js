@@ -421,16 +421,16 @@
                 '        aiib   aiiiiib   aiib',
                 '        aiib   aiqrsib   aiib',
                 '    a>b aii=ccceituvifccceiib a<b',
-                '    aib aiiiiiiiituviiiiiiiib aib', 
-                '    aifc(iiiiiiiituviiiiiiii*ceib',
-                '    aiiiiiiiiiiIituviIiiiiiiiiiib',
+                '    aib aiiiNiiiituviiiiNiiib aib', 
+                '    aifc(iiiNiiiituviiiiNiii*ceib',
+                '    aUiiiiiiiiiIituviIiiiiiiiiiUb',
                 '    xdddgiippiiIituviIiippiihdddz',
 //                '        aiippiiIituviIiippiib',
 //                '        aiippiiIituviIiippiib',
                 'aVb     aiippiiIituviIiippiib     a^b',
                 'aib     aiippiiIituviIiippiib     aib',
-                'aifccccceiiiiiiiituviiiiiiii-ccccceib',
-                'aiiiiiiiiiiiiiiiiABCiiiiiiiiiiiiiiiib',
+                'aifccccceiiNiiiiituviiiiiNii-ccccceib',
+                'aUUiiiiiiiiNiiiiiABCiiiiiNiiiiiiiiUUb',
                 'xdddddddddddddddgiiihdddddddddddddddz',
                 '                aiiib',
                 '                aiii)cccccccw',
@@ -1453,32 +1453,6 @@
 
         addLevel(maps[level], levelCfg)
         hearts = []
-        if(!gamestate.hearts||gamestate.hearts<3){
-            gamestate.hearts = 3
-        }
-        for(i=1;i<=gamestate.hearts;i++){
-            console.log('heart'+i)
-            const h = add([
-                sprite('heart'),
-                pos((15*(i-1)), 70),
-                area(),
-                layer('ui'),
-                scale(2),
-                {
-                    index:i
-                }             
-            ]);
-            h.onUpdate(function(i){
-                const currCam = camPos();
-                const zeroCam = {
-                    x: currCam.x - (width()/2) + (parseInt(h.index)*25),
-                    y: currCam.y - (height()/2)
-                }
-                console.log(zeroCam)                
-                h.moveTo(zeroCam.x, zeroCam.y)
-            })
-            hearts.push(h)
-        }
         const player = add([
             sprite('doctor'),
             pos(startX, startY),
@@ -1523,6 +1497,10 @@
                     player.pos,
                 )
             } else {
+                if(!gamestate.hearts||gamestate.hearts<3){
+                    gamestate.hearts = 3
+                }
+        
                 dialog('Yawn... Another fine morning... TO MAKE THOSE MISERABLE VILLAGERS PAY!\n\nHAHAHAHA!\n\nTo the Monster Maker Machine!',
                     player,
                     player.pos,
@@ -1532,6 +1510,29 @@
         }else{
             player.play("Idle")
 
+        }
+        for(i=1;i<=gamestate.hearts;i++){
+            console.log('heart'+i)
+            const h = add([
+                sprite('heart'),
+                pos((15*(i-1)), 70),
+                area(),
+                layer('ui'),
+                scale(2),
+                {
+                    index:i
+                }             
+            ]);
+            h.onUpdate(function(i){
+                const currCam = camPos();
+                const zeroCam = {
+                    x: currCam.x - (width()/2) + (parseInt(h.index)*25),
+                    y: currCam.y - (height()/2)
+                }
+                console.log(zeroCam)                
+                h.moveTo(zeroCam.x, zeroCam.y)
+            })
+            hearts.push(h)
         }
 
         camPos(startX, startY)
@@ -1945,6 +1946,7 @@
             if (player.immune) return
             player.immune = true;
             gamestate.hearts--
+            saveState()
             player.play('Die', {speed:150});
             shake(5)
             player.moveTo(player.pos.x+(rand(50)-25), player.pos.y+(rand(50)-25))
