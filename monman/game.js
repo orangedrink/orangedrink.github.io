@@ -12,6 +12,7 @@
     //globals
     let dialogOpen = false;
     let keystate
+    let hearts = []
     let gamestate = JSON.parse(localStorage.getItem("gameState"));
     if(!gamestate){
         gamestate = {
@@ -30,7 +31,7 @@
         localStorage.setItem("gameState", s);
     }
     // Constants
-    const MOVE_SPEED = 120
+    const MOVE_SPEED = 160
     const camTween = function(p, steps){
         var step = 0;
         var camInterval = setInterval(function(){
@@ -258,6 +259,7 @@
     //Load sprites
     loadRoot('assets/')
     loadSprite('logo', 'Logo.png')
+    loadSprite('heart', 'heart.png')
     loadSprite('left-wall', 'wall-left.png')
     loadSprite('left-wall', 'wall-left.png')
     loadSprite('top-wall', 'wall-top.png')
@@ -1333,7 +1335,7 @@
                 dialog('Appendix A: Other features and settings\n\nYour model is equiped with a tissue scanner and transmogrifier. Living creatures can be replicated and used a basis for a monster privided that sufficient power is supplied. See breakers under Appendix B', player, player.pos)
             },
             'appendixb': ()=>{
-                dialog('Appendix B: Power and Maintenance\n\nTo enable some features please supply full power to the unit. Any breakers must be thrown.', player, player.pos)
+                dialog('Appendix B: Power and Maintenance\n\nTo enable some features please supply full power to the unit. Make sure your breaker has been reset.', player, player.pos)
             },
             'note': ()=>{
                 dialog('A old note written in messy handwriting\n\n"Directions: Right, Up, Up, Left, Right"', player, player.pos)
@@ -1450,7 +1452,33 @@
         }
 
         addLevel(maps[level], levelCfg)
-
+        hearts = []
+        if(!gamestate.hearts||gamestate.hearts<3){
+            gamestate.hearts = 3
+        }
+        for(i=1;i<=gamestate.hearts;i++){
+            console.log('heart'+i)
+            const h = add([
+                sprite('heart'),
+                pos((15*(i-1)), 70),
+                area(),
+                layer('ui'),
+                scale(2),
+                {
+                    index:i
+                }             
+            ]);
+            h.onUpdate(function(i){
+                const currCam = camPos();
+                const zeroCam = {
+                    x: currCam.x - (width()/2) + (parseInt(h.index)*25),
+                    y: currCam.y - (height()/2)
+                }
+                console.log(zeroCam)                
+                h.moveTo(zeroCam.x, zeroCam.y)
+            })
+            hearts.push(h)
+        }
         const player = add([
             sprite('doctor'),
             pos(startX, startY),
@@ -1913,6 +1941,17 @@
                 go ('mansion', { level: 0, score: 0, startX: 192, startY:216, newGame:true })
             })
         }
+        const hurt = ()=>{
+            if (player.immune) return
+            player.immune = true;
+            gamestate.hearts--
+            player.play('Die', {speed:150});
+            shake(5)
+            player.moveTo(player.pos.x+(rand(50)-25), player.pos.y+(rand(50)-25))
+            wait(2.5,()=>{
+                player.immune = false
+            })
+        }
         const addProjectile = (spr, ps, vel, lifespan, effect)=>{
             const p = add([
                 sprite(spr),
@@ -1944,9 +1983,14 @@
         })
         player.onCollide('hurts', (s) => {
             //return
-            if (player.dead) return
-            if(!player.dead){
-                die();
+            destroy(hearts[gamestate.hearts-1])
+            destroy(s)
+            hurt()
+            if(gamestate.hearts<=1){
+                if (player.dead) return
+                if(!player.dead){
+                    die();
+                }    
             }
         })
         player.onCollide('breaker', (s) => {
@@ -2164,7 +2208,6 @@
         const rangeAdj = 30-(size*10)
         const addTears = function(t){
             gamestate.tears += t
-            console.log('tears', gamestate.tears)
             //Save state
             saveState()
         }
@@ -2205,7 +2248,6 @@
                  if(e.count<e.genCount && e.timer<0){
                     if(Math.abs(e.pos.x-player.pos.x)<200&&Math.abs(e.pos.y-player.pos.y)<150){
                         e.count++
-                        console.log(e.timer)
                         e.timer = rand(7-dex)+(4-(dex/2))
                         e.play('open', {loop:false, speed:30})
                         wait(.25, ()=>{
