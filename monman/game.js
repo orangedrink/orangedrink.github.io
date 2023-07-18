@@ -2623,12 +2623,12 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
             dialogOpen = true
             const logo = add([
                 sprite('logo'),
-                pos(center().x,firstTime?300*tscale:870*tscale),
+                pos(center().x,firstTime?265*tscale:870*tscale),
                 scale(tscale*3),
                 origin('center')
             ])
             logo.onUpdate(()=>{
-                if(logo.pos.y>190){
+                if(logo.pos.y>260*tscale){
                     logo.pos.y-=.5;
                 }
             })
