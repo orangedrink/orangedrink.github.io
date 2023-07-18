@@ -2563,13 +2563,21 @@
         })
         const message = "Use the arrow keys and spacebar to select an option."
         const imessage = `INSTRUCTIONS
+
 You are The Doctor, an evil, immortal being that lives high above the villagers in the Monster Mansion. You must solve the riddles of the mansion to configure the Monster Maker Machine and unleash a unique playable creature on the villagers below. Extract the misery of the villagers to fill the Reservoir of Tears and expand your own magical powers.
 
 Use the arrow keys to move and space for spells or attack.        
 
 Press space to continue.`
         const cmessage = `CREDITS
-Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
+
+Artwork and Development by David Franks
+Title screen image by Markiin Bellucci
+Song "Lady of the 80's" by Grand Project
+Some artwork was commercially sourced.
+
+Press space to continue.`
+
         
         const instructiontext = add([
             text(imessage,{
@@ -2609,7 +2617,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         let selected = 0;
         let cursor
         let ichoices = ["Start", "Instructions", "Credits"]
-        let p = {x:center().x+5, y:260}
+        let p = {x:center().x+5, y:240}
         onKeyPress('up', () => {
             keystate = 'up'
         })
