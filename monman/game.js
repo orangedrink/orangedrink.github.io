@@ -2623,7 +2623,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
             dialogOpen = true
             const logo = add([
                 sprite('logo'),
-                pos(center().x,firstTime?265*tscale:850*tscale),
+                pos(center().x,firstTime?265*tscale:870*tscale),
                 scale(tscale*3),
                 origin('center')
             ])
