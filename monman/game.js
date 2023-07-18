@@ -254,6 +254,7 @@
     //Load sounds
     loadSound("title", "assets/lady-of-the-80s.mp3")
     loadSound("house", "assets/kim-lightyear-just-a-dream-wake-up.mp3")
+    loadSound("explosion", "assets/explosion.mp3")
     //Load sprites
     loadRoot('assets/')
     loadSprite('logo', 'Logo.png')
@@ -1479,10 +1480,10 @@
             layer('mg')
         ])
         if(newGame){
-            hmusic = play("house", {
-                volume: 0.15,
-                loop: false
-            });
+            //hmusic = play("house", {
+            //    volume: 0.15,
+            //    loop: false
+            //});
             newgame = false;
             //dialog('1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16',
             //  player,
@@ -1853,7 +1854,13 @@
                     })
                 })
             }
-            if(spell.sprite=='explosion') shake((spell.size-.5)*4)
+            if(spell.sprite=='explosion'){
+                shake((spell.size-.5)*4)
+                play("explosion", {
+                    volume: 0.5,
+                    loop: false
+                })
+            } 
             wait(lifespan||1, () => {
                 if (spell.sprite=='explosion'&& player.state == 'Idle' && !player.dead) {
                     player.setState('Laugh')
