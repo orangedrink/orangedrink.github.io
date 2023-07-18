@@ -1595,7 +1595,7 @@
             }
         });
         player.onCollide('monmach', (m) => {
-            hmusic.stop();
+            //hmusic.stop();
             if(!m.open){
 
                 burp({
@@ -2148,10 +2148,10 @@
 
     })
     scene('village', ({key, dex, spd, con, str, name, type, size, specials={}})=>{
-        const music = play("title", {
-            volume: 0.5,
-            loop: false
-        })
+        //const music = play("title", {
+        //    volume: 0.5,
+        //    loop: false
+        //})
 
         //loadAseprite(key, 'monsters/'+key+'.png', 'monsters/'+key+'.json')
         const rangeAdj = 30-(size*10)
@@ -2416,7 +2416,7 @@
             player.on("death", () => {
                 //destroy(enemy)
                 wait(3, ()=>{
-                    music.stop()
+                    //music.stop()
                     go('mansion', { level: 1, startX: 1188, startY:216, newGame:true, newGameMsg:'My creation was a success! Who\'s the nerd now?? After extracting the tears of those miserable villiagers I have '+gamestate.tears+' tears in the resevoir! Hrm now wherever is the blasted thing..' })
                 })
             })
@@ -2533,13 +2533,15 @@
     
     })
     scene('title', ()=>{
+        let offset = (500-width())/4
+        console.log(offset)
         const music = play("title", {
             volume: 0.5,
             loop: true
         })
         const title = add([
             sprite('title'),
-            pos(0, -200),
+            pos(offset, -200),
             scale(.75),
             opacity(0)
         ])
@@ -2597,7 +2599,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
         let selected = 0;
         let cursor
         let ichoices = ["Start", "Instructions", "Credits"]
-        let p = {x:260, y:250}
+        let p = {x:offset+320, y:250}
         onKeyPress('up', () => {
             keystate = 'up'
         })
@@ -2618,7 +2620,7 @@ Title screen image: Markiin Bellucci (Reddit user u/markiin05)`
             dialogOpen = true
             const logo = add([
                 sprite('logo'),
-                pos(100,firstTime?-10:400),
+                pos(offset+160,firstTime?-10:400),
                 scale(1.75),
 
 
