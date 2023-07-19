@@ -1760,7 +1760,7 @@
                                     {x:m.pos.x+64, y:m.pos.y+64},
                                     ['Continue', 'Cancel'],
                                     (i)=>{
-                                        hmusic.stop();
+                                        //hmusic.stop();
                                         if(i==0) go('village', monsterMapping['bean'])
 
 
