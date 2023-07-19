@@ -254,7 +254,7 @@
     }
     //Load sounds
     loadSound("title", "assets/lady-of-the-80s.mp3")
-    loadSound("house", "assets/kim-lightyear-just-a-dream-wake-up.mp3")
+    //loadSound("house", "assets/kim-lightyear-just-a-dream-wake-up.mp3")
     loadSound("explosion", "assets/explosion.mp3")
     //Load sprites
     loadRoot('assets/')
@@ -421,16 +421,16 @@
                 '        aiib   aiiiiib   aiib',
                 '        aiib   aiqrsib   aiib',
                 '    a>b aii=ccceituvifccceiib a<b',
-                '    aib aiiiNiiiituviiiiNiiib aib', 
-                '    aifc(iiiNiiiituviiiiNiii*ceib',
-                '    aUiiiiiiiiiIituviIiiiiiiiiiUb',
+                '    aib aiiiiiiiituviiiiNiiib aib', 
+                '    aifc(iiiiiiiituviiiiiiii*ceib',
+                '    aUiiiiiiiiiIituviIiiiiiiiiiib',
                 '    xdddgiippiiIituviIiippiihdddz',
 //                '        aiippiiIituviIiippiib',
 //                '        aiippiiIituviIiippiib',
                 'aVb     aiippiiIituviIiippiib     a^b',
                 'aib     aiippiiIituviIiippiib     aib',
-                'aifccccceiiNiiiiituviiiiiNii-ccccceib',
-                'aUUiiiiiiiiNiiiiiABCiiiiiNiiiiiiiiUUb',
+                'aifccccceiiNiiiiituviiiiiiii-ccccceib',
+                'aiiiiiiiiiiiiiiiiABCiiiiiiiiiiiiiiiUb',
                 'xdddddddddddddddgiiihdddddddddddddddz',
                 '                aiiib',
                 '                aiii)cccccccw',
