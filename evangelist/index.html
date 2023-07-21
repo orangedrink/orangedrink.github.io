@@ -1,0 +1,66 @@
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Evangelist</title>
+      <style>
+        /* just to get rid of the white border and scrolling */
+        body {
+          margin: 0;
+          overflow: hidden;
+        }
+      </style>
+    </head>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+    <body>
+    
+      <script src="https://unpkg.com/kaboom@2000.2.9/dist/kaboom.js"></script>
+      <script>
+        kaboom({
+            background: [0, 0, 0],
+            width: 640,
+            height: 400,
+            scale: 1,
+        });
+        const STAR_COUNT = 1000;
+        const STAR_SPEED = 5;
+        const SCREEN_WIDTH = width()
+        const SCREEN_HEIGHT = height()
+        var stars = [];
+        function spawnStars() {
+        for (let i = 0; i < STAR_COUNT; i++) {
+            const newStar = {
+                xpos: rand(SCREEN_WIDTH),
+                ypos: rand(SCREEN_HEIGHT),
+                spd: rand(5),
+            };
+            stars.push(newStar);
+            }
+        }
+
+        spawnStars();
+
+        onUpdate(() => {
+            const centerX = SCREEN_WIDTH * 0.5;
+            const centerY = SCREEN_HEIGHT * 0.5;
+            stars.forEach((star) => {
+                const intensity = star.spd*60
+                const size = star.spd/2
+                if(star.ypos>SCREEN_HEIGHT){
+                    star.ypos=-rand(100)
+                }
+                drawRect({
+                    width: size,
+                    height: size,
+                    pos: vec2(star.xpos, star.ypos+=star.spd),
+                    color: rgb(intensity, intensity, intensity),
+                });
+            });
+        });
+      </script>
+    </body>
+    </html>
