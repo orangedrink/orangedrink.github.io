@@ -1512,7 +1512,7 @@
 
         }
         for(i=1;i<=gamestate.hearts;i++){
-            console.log('heart'+i)
+            //console.log('heart'+i)
             const h = add([
                 sprite('heart'),
                 pos((15*(i-1)), 70),
@@ -1529,7 +1529,7 @@
                     x: currCam.x - (width()/2) + (parseInt(h.index)*25),
                     y: currCam.y - (height()/2)
                 }
-                console.log(zeroCam)                
+                //console.log(zeroCam)                
                 h.moveTo(zeroCam.x, zeroCam.y)
             })
             hearts.push(h)
@@ -1842,7 +1842,7 @@
             //keystate = ''
         })
         function spawnSpell(p) {
-            console.log(p)
+            //console.log(p)
             const spell = spellMapping[gamestate.spellKey]
             let deg = 0;
             if(spell.expSpr){
@@ -2314,7 +2314,7 @@
                     enemy.onAnimEnd("die", () => {
                         if(count) count-=1    
                         enemy.height = 0
-                        console.log(count)
+                        //console.log(count)
                         wait(10,()=>{
                             destroy(enemy)
                         })
@@ -2396,7 +2396,7 @@
                 // You can also register an event that runs when certain anim ends
                 player.flipX(player.turned);
                 player.enterState('idle')
-                console.log('test')
+                //console.log('test')
             })
             player.onAnimEnd("attack-1", () => {
                 // You can also register an event that runs when certain anim ends
@@ -2548,7 +2548,7 @@
                             }
                             if(specials.standing.lunge){
                                 player.vx = (dex*150)*(player.turned?-1:1);
-                                console.log('lunge')
+                                //console.log('lunge')
                             }
                         }
                     }
@@ -2586,9 +2586,6 @@
     scene('title', ()=>{
         let offset = width()*.3
         let tscale = width() / 1000
-        console.log(window.innerWidth)
-        console.log(width())
-        console.log(tscale)
         const music = play("title", {
             volume: 0.5,
             loop: true
@@ -2751,7 +2748,7 @@ Press space to continue.`
                         })
                         wait(.1,()=>{
                             dialogOpen = false
-                            console.log(selected)
+                            //console.log(selected)
                             if(selected===0){
                                 go ('mansion', { level: 0, startX: 192, startY:216, newGame:true })
                             }else if(selected===1){
