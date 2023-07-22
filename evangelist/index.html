@@ -20,47 +20,510 @@
     
       <script src="https://unpkg.com/kaboom@2000.2.9/dist/kaboom.js"></script>
       <script>
+        
         kaboom({
             background: [0, 0, 0],
-            width: 640,
-            height: 400,
+            fullscreen: true,
+            //width:640,
+            //height: 480,
             scale: 1,
         });
-        const STAR_COUNT = 1000;
-        const STAR_SPEED = 5;
+        loadRoot('assets/')
+        loadSprite('playerl1', 'player_l1.png')
+        loadSprite('playerl2', 'player_l2.png')
+        loadSprite('playerl3', 'player_l3.png')
+        loadSprite('playerl4', 'player_l4.png')
+        loadSprite('playerl5', 'player_l5.png')
+        loadSprite('laser1', 'laser1.png')
+        loadSprite('laser2', 'laser2.png')
+        loadSprite('laser3', 'laser3.png')
+        loadSprite('laser4', 'laser4.png')
+        loadSprite('asteroid1', 'asteroid1.png')
+        loadSprite('asteroid2', 'asteroid2.png')
+        loadSprite('asteroid3', 'asteroid3.png')
+        loadSprite('guard1', 'guard_l1.png')
+        loadSprite('guard2', 'guard_l2.png')
+        loadSprite('guard3', 'guard_l3.png')
+        loadSprite('guard4', 'guard_l4.png')
+        loadSprite('guard5', 'guard_l5.png')
+
         const SCREEN_WIDTH = width()
         const SCREEN_HEIGHT = height()
-        var stars = [];
-        function spawnStars() {
-        for (let i = 0; i < STAR_COUNT; i++) {
-            const newStar = {
-                xpos: rand(SCREEN_WIDTH),
-                ypos: rand(SCREEN_HEIGHT),
-                spd: rand(5),
-            };
-            stars.push(newStar);
-            }
+        const FALLOFF = .9
+        const MAX_SPRITES = 60
+        let instructionsCollideFlag = false
+        let startCollideFlag = false
+        let credits = parseInt(localStorage.getItem('credits'))
+        let playerSpeed = 40;
+        let cooldown = .25
+        let asteroidChance = 0
+        let reward = 0
+        let sprCount = 0
+        function starfield(){
+          //Create starfield
+          const STAR_COUNT = 200;
+          var stars = [];
+          function spawnStars() {
+          for (let i = 0; i < STAR_COUNT; i++) {
+              const newStar = {
+                  xpos: rand(SCREEN_WIDTH),
+                  ypos: rand(SCREEN_HEIGHT),
+                  spd: rand(70),
+              };
+              stars.push(newStar);
+              }
+          }
+
+          spawnStars();
+
+          onUpdate(() => {
+              stars.forEach((star) => {
+                  const intensity = (star.spd*10)+20
+                  const size = star.spd/22
+                  if(star.ypos>SCREEN_HEIGHT){
+                      star.ypos=-rand(100)
+                  }
+                  drawRect({
+                      width: size,
+                      height: size,
+                      pos: vec2(star.xpos, star.ypos+=(star.spd*dt())),
+                      color: rgb(intensity, intensity, intensity),
+                  });
+              });
+          });
+
         }
 
-        spawnStars();
+        scene('game', () => {
+            layers(['bg', 'mg', 'fg', 'obj', 'ui'])
+            asteroidChance = 0;
+            reward = 0;
+            startCollideFlag = false;
+            sprCount = 0
+            instructionsCollideFlag = false;
+            function addCredits(cred){
+              creditText.value += cred
+              credits = creditText.value
+              creditText.text = "CREDITS: $"+creditText.value
+              localStorage.setItem("credits", creditText.value);
+            }
+            function tween(spr, x, y){
+              for(i=0;i<160;i++){
+                    wait(i*.01, ()=>{
+                      let xoffs = x - spr.pos.x
+                      spr.moveTo(spr.pos.x+(xoffs*.2), spr.pos.y)
+                    })
+              }
+            }
+            function explosion(x, y, count, c1=235, c2=141, c3=243, size=10){
+              for(i=0;i<count;i++){
+                const tsize = rand(5)+size
+                const xpl = add([
+                  circle(tsize/3, tsize/3),
+                  pos(x,y),
+                  origin('center'),
+                  //235,141,243
+                  color(c1, c2, c3),
+                  layer('fg'),
+                  {
+                    ttl:tsize,
+                    xvel:rand(12)-6,
+                    yvel:rand(12)-6,
+                  }
+                ])
+                xpl.onUpdate(()=>{
+                  //destroy(thruster)
+                  xpl.ttl--
+                  xpl.scale = xpl.ttl*-.1
+                  xpl.moveTo(xpl.pos.x+xpl.xvel, xpl.pos.y+xpl.yvel)
+                  if(xpl.ttl<0){
+                    destroy(xpl)
+                  }
+                })               
 
-        onUpdate(() => {
-            const centerX = SCREEN_WIDTH * 0.5;
-            const centerY = SCREEN_HEIGHT * 0.5;
-            stars.forEach((star) => {
-                const intensity = star.spd*60
-                const size = star.spd/2
-                if(star.ypos>SCREEN_HEIGHT){
-                    star.ypos=-rand(100)
+              }
+            }
+
+            starfield()
+            let creditText
+            let bountyText
+            let startText = add([
+                text('START GAME',{
+                    size: 24,
+                    width:300
+                }),
+                area({ scale: 2}),
+                pos(width()*.333, height()*.25),
+                origin('center'),
+                'startText',
+            ])
+            let instructionText = add([
+                text('INSTRUCTIONS',{
+                    size: 24,
+                    width:300
+                }),
+                area({ scale: 2 }),
+                pos(width()*.666, height()*.25),
+                origin('center'),
+                'instructionText',
+            ])
+            let instructions = add([
+                text('USE ARROW KEYS TO MOVE, SPACE TO FIRE.\nSHOOT ONE OF THE MENU OPTIONS ABOVE.',{
+                    size: 24,
+                    width:width()
+                }),
+                area({ scale: 0.5 }),
+                pos(width()/2, height()*.666),
+                origin('center'),
+            ])
+            let upgradesText
+            if(credits>0){
+              tween(startText, width()*.25)
+              tween(instructionText, width()*.75)
+              explosion(width()/2, height()*.25, 40)
+              upgradesText =  add([
+                text('UPGRADES\n($'+credits+" CREDITS)",{
+                    size: 24,
+                    width:width()
+                }),
+                area({ scale: 0.5 }),
+                layer('ui'),
+                pos(width()/2, height()*.25),
+                origin('center'),
+              ])
+              upgradesText.onCollide('shot', function(){
+                explosion(upgradesText.pos.x, upgradesText.pos.y, 40)
+                destroy(upgradesText);
+                destroy(startText)
+                destroy(instructionText)
+                destroy(instructions)
+
+              })
+            }
+            const player = add([
+                sprite('playerl1'),
+                pos(width()/2, height()/2),
+                area(),
+                //body(),
+                //gravity(16),
+                layer('fg'),
+                scale(1),
+                origin('center'),
+                'player',
+                {
+                  xvel:0,
+                  yvel:0,
+                  sdelta:0,
+                  thusterPos:.35,
+                  level: 1,
+                  hp: 10,
+                }             
+            ]);
+            player.onCollide('hurts', (h)=>{
+              sprCount--
+              destroy(h)
+              player.hp--
+              player.yvel+=3
+              explosion(player.pos.x, player.pos.y, 10, 160, 160, 160 ,15)
+              if(player.hp<1){
+                explosion(player.pos.x, player.pos.y, 20, 200 ,100 ,10, 15)
+                destroy(player)
+                wait(2, ()=>{
+                  go('game')
+                })
+              }
+            })
+            player.onUpdate(()=>{
+              const tsize = rand(18);
+              const thruster = add([
+                circle(tsize/2, tsize/2),
+                pos(player.pos.x, player.pos.y+(player.height*player.thusterPos)),
+                origin('center'),
+                opacity(tsize),
+                color(200,100,10),
+                layer('fg'),
+                {
+                  ttl:tsize,
+                  xvel:rand(2)-1,
+                  yvel:rand(2),
                 }
-                drawRect({
-                    width: size,
-                    height: size,
-                    pos: vec2(star.xpos, star.ypos+=star.spd),
-                    color: rgb(intensity, intensity, intensity),
-                });
-            });
-        });
+              ])
+              thruster.onUpdate(()=>{
+                //destroy(thruster)
+                thruster.ttl--
+                thruster.scale = thruster.ttl/16
+                thruster.moveTo(thruster.pos.x+thruster.xvel, thruster.pos.y+thruster.yvel)
+                if(thruster.ttl<0){
+                  destroy(thruster)
+                }
+              })  
+              if(isKeyDown('space')){
+                console.log(sprCount)
+                let t = time()
+                if(t-player.sdelta>cooldown){
+                  player.sdelta = t
+                  const s = add([
+                    sprite('laser1'),
+                    pos(player.pos.x, player.pos.y-16),
+                    area(),
+                    layer('mg'),
+                    scale(1),
+                    origin('center'),
+                    'shot'
+                  ])
+                  if(rand(3)<1) explosion(player.pos.x, player.pos.y-(player.height/2), 1)
+                  s.onUpdate(()=>{
+                    s.moveTo(s.pos.x, s.pos.y-=600*dt())
+                    if(s.pos.y<-10){
+                      destroy(s)
+                    }
+                  })
+                  
+                  s.onCollide('canhit', (e)=>{
+                    explosion(s.pos.x, s.pos.y, 3)
+                    destroy(s)
+                    e.hp--
+                    if(e.hp<1) {
+                      explosion(e.pos.x, e.pos.y, 5, 150, 150, 150, 15)
+                      shake(3)
+                      if(e.type==='asteroid'){
+                        reward+=.5
+                        bountyText.text = "BOUNTY: $"+reward*100
+                        addCredits(parseInt((rand(10)+5)*10+rand(10)))
+                      }else if(e.type==='guard'){
+                        reward+=1
+                        bountyText.text = "BOUNTY: $"+reward*100
+                      }
+                      sprCount--
+                      destroy(e)
+                    }
+                    e.vel-=30
+                  })
+                }
+              }
+              onCollide('startText', 'shot', (s,t)=>{
+                if(!startCollideFlag){
+                  startCollideFlag = true
+                  creditText = add([
+                      text("CREDITS: $"+credits, {
+                          size: 24,
+                          width:300
+                      }),
+                      pos(width()-10, 20),
+                      origin('right'),
+                      layer('ui'),
+                      { value: credits },
+                  ])
+                  bountyText = add([
+                      text("", {
+                          size: 24,
+                          width:300
+                      }),
+                      pos(width()-10, 44),
+                      origin('right'),
+                      layer('ui'),
+                      { value: reward },
+                  ])
+                  explosion(s.pos.x, s.pos.y,120)
+                  destroy(s)
+                  destroy(t)
+                  destroy(instructionText)
+                  destroy(upgradesText)
+                  destroy(instructions)
+                  asteroidChance = 5
+                }
+              })
+              onCollide('instructionText', 'shot', (s,t)=>{
+                if(!instructionsCollideFlag){
+                  instructionsCollideFlag = true
+                  explosion(s.pos.x, s.pos.y,50)
+                  destroy(s)
+                  destroy(t)
+                  destroy(instructions)
+                  destroy(upgradesText)
+                  tween(startText, width()/2)
+                  instructions = add([
+                  text('YOU ARE CAPTAIN OF THE EVANGELIST, A PIRATE SHIP ENGAGED IN ILLEGAL MINING IN A SECTOR RESERVED FOR THE MINING SYNDICATE. THE MORE ASTEROIDS YOU MINE, THE HIGHER THE PRICE ON YOUR HEAD. KEEP YOUR BOUNTY LOW TO AVOID SYNDICATE GUARDS AND MERCINARIES. JUDGEMENT WILL BE SWIFT SHOULD YOU BE CAUGHT, BUT RULES ARE MEANT TO BE BROKEN.',{
+                      size: 24,
+                      width:width()
+                  }),
+                  area({ scale: 0.5 }),
+                  pos(width()/2, height()*.666),
+                  origin('center'),
+              ])
+                }
+                //go('game')
+              })
+
+              if(isKeyDown('up')){
+                player.yvel-=playerSpeed*dt()
+              }else if(isKeyDown('down')){
+                player.yvel+=playerSpeed*dt()
+              } 
+              if(isKeyDown('left')){
+                player.xvel-=playerSpeed*dt()
+              }else if(isKeyDown('right')){
+                player.xvel+=playerSpeed*dt()
+              }
+              player.xvel=player.xvel*FALLOFF
+              player.yvel=player.yvel*FALLOFF
+              player.moveTo(player.pos.x+player.xvel, player.pos.y+player.yvel)
+              if(player.pos.y>height()){
+                player.moveTo(player.pos.x, height())
+              }else if(player.pos.y<1){
+                player.moveTo(player.pos.x, 1)
+              } 
+              if(player.pos.x>width()){
+                player.moveTo(width(), player.pos.y)
+              }else if(player.pos.x<1){
+                player.moveTo(1, player.pos.y)
+              }
+            })
+           
+            onUpdate(()=>{
+              asteroidChance?asteroidChance+=.005:0
+              if(sprCount<MAX_SPRITES&&rand(1000)<reward){
+                  sprCount+=1
+                  let guardIndex = reward/5
+                  if(guardIndex>3) guardIndex = 4
+                  if(guardIndex<1) guardIndex = 1
+                  guardIndex = parseInt(rand(guardIndex)+1)
+                  const guard = add([
+                    sprite('guard'+guardIndex),
+                    pos(rand(width()), -100),
+                    area({scale:.9}),
+                    body(),
+                    gravity(0),
+                    layer('mg'),
+                    scale(1),
+                    origin('center'),
+                    rotate(),
+                    'guard',
+                    'hurts',
+                    'canhit',
+                    
+                    {
+                      xvel: 0,
+                      yvel: rand(200),
+                      hp: rand(2)+(guardIndex>3?guardIndex*8:guardIndex*2),
+                      type: 'guard',
+                      level: guardIndex,
+                      sdelta:0
+                    }             
+                  ]);
+                  guard.onUpdate(()=>{
+
+                    if(player.pos.x>guard.pos.x){
+                      if(guard.xvel<200) guard.xvel+=10
+                    }else{
+                      if(guard.xvel>-200) guard.xvel-=10
+                    }
+                    let distance
+                    if(guard.level===1){
+                      distance = 0
+                    }else{
+                      distance = 200
+                      if(Math.abs(player.pos.x-guard.pos.x)<10){
+                        let t = time()
+                        if(t-guard.sdelta>1){
+                          guard.sdelta = t;
+                          sprCount++
+                          const es = add([
+                          sprite('laser4'),
+                          pos(guard.pos.x, guard.pos.y+16),
+                          area(),
+                          layer('bg'),
+                          scale(1),
+                          origin('center'),
+                          'eshot',
+                          'hurts'
+                        ])
+                        if(rand(3)<1) explosion(player.pos.x, player.pos.y-(player.height/2), 1)
+                          es.onUpdate(()=>{
+                            es.moveTo(es.pos.x, es.pos.y+=600*dt())
+                            if(es.pos.y>height()){
+                              destroy(es)
+                            }
+                          })
+                        }
+                      }
+                    }
+                    if(player.pos.y-distance>guard.pos.y){
+                      if(guard.yvel<200) guard.yvel+=10
+                    }else{
+                      if(guard.yvel>-200) guard.yvel-=10
+                    }
+
+                    guard.moveTo(guard.pos.x+=guard.xvel*dt(), guard.pos.y+=guard.yvel*dt())
+                    
+                    if(guard.pos.y>height()+100||guard.pos.y<-100){
+                      sprCount--
+                      destroy(guard)
+                    } 
+                  })
+                  /*guard.onCollide('shot', (s)=>{
+                    explosion(s.pos.x, s.pos.y,10)
+                    destroy(s)
+                    guard.hp--
+                    if(guard.hp<1) {
+                      explosion(guard.pos.x, guard.pos.y, 10, 150, 150, 150, 15)
+                      shake(3)
+                      sprCount-=1
+                      destroy(guard)
+                    }
+                    guard.vel-=30
+                  })*/
+
+                } else if(sprCount<MAX_SPRITES&&rand(1000)<asteroidChance){
+                  sprCount+=1
+                  const asteroid = add([
+                    sprite(rand(2)>1?'asteroid1':'asteroid2'),
+                    pos(rand(width()), -100),
+                    area({scale:.9}),
+                    body(),
+                    gravity(0),
+                    layer('mg'),
+                    scale(rand(.5)+1),
+                    origin('center'),
+                    rotate(),
+                    'asteroid',
+                    'hurts',
+                    'canhit',
+                    {
+                      rvel:rand(-40)-80,
+                      vel: rand(200),
+                      rdir: rand(2)>1,
+                      hp: rand(4)+2,
+                      type: 'asteroid'
+                    }             
+                  ]);
+                  asteroid.onUpdate(()=>{
+                    asteroid.moveTo(asteroid.pos.x, asteroid.pos.y+=asteroid.vel*dt())
+                    asteroid.angle = asteroid.rdir?asteroid.angle-asteroid.rvel*dt():asteroid.angle+asteroid.rvel*dt()
+                    if(asteroid.pos.y>height()+100||asteroid.pos.y<-100){
+                      destroy(asteroid)
+                      sprCount--
+                    } 
+                  })
+                  /*asteroid.onCollide('shot', (s)=>{
+                    explosion(s.pos.x, s.pos.y,10)
+                    destroy(s)
+                    asteroid.hp--
+                    if(asteroid.hp<1) {
+                      explosion(asteroid.pos.x, asteroid.pos.y, 3, 150, 150, 150, 15)
+                      shake(3)
+                      reward+=1
+                      sprCount-=1
+                      destroy(asteroid)
+                    }
+                    asteroid.vel-=30
+                  })*/
+
+              }
+            })
+
+        })
+        go('game')
       </script>
     </body>
     </html>
