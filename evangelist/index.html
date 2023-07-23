@@ -47,9 +47,9 @@
         loadSprite('guard4', 'guard_l4.png')
         loadSprite('guard5', 'guard_l5.png')
         loadSprite('powerup1', 'powerup1.png')
-        loadSprite('bribeIcon', 'bribe_icon.png')
-        loadSprite('shipIcon', 'ship_icon.png')
-        loadSprite('laserIcon', 'laser_icon.png')
+//        loadSprite('bribeIcon', 'bribe_icon.png')
+//        loadSprite('shipIcon', 'ship_icon.png')
+//        loadSprite('laserIcon', 'laser_icon.png')
 
         const SCREEN_WIDTH = width()
         const SCREEN_HEIGHT = height()
@@ -339,16 +339,16 @@
                     ready: true
                   },
                 ])
-                const laserIcon = add([
-                    sprite('laserIcon'),
-                    pos(width()*.25, height()*.2),
-                    area(),
-                    //body(),
-                    //gravity(16),
-                    layer('ui'),
-                    scale(1),
-                    origin('center'),
-                ]);
+                // const laserIcon = add([
+                //     sprite('laserIcon'),
+                //     pos(width()*.25, height()*.2),
+                //     area(),
+                //     //body(),
+                //     //gravity(16),
+                //     layer('ui'),
+                //     scale(1),
+                //     origin('center'),
+                // ]);
 
                 const laserSubmessage = 'LASER UPGRADE'+(laserCost==2200?' 2':'')+'\n('
                 const laserTextmessage = laserSprite=='laser3'?'LASER UPGRADED\n(2200)':laserSubmessage+laserCost+' CREDITS)'
@@ -367,7 +367,7 @@
                 if(Math.abs(player.pos.y-height()/2)<60){
                   player.yvel+=10
                 }
-                const shipIcon = add([
+/*                 const shipIcon = add([
                     sprite('shipIcon'),
                     pos(width()*.5, height()*.2),
                     area(),
@@ -376,7 +376,7 @@
                     layer('ui'),
                     scale(1),
                     origin('center'),
-                ]);
+                ]); */
 
                 const shipText =  add([
                   text(shipUpgrades[playerSprite].text, {
@@ -390,7 +390,7 @@
                     ready: true
                   },
                 ])
-                const bribeIcon = add([
+/*                 const bribeIcon = add([
                     sprite('bribeIcon'),
                     pos(width()*.75, height()*.2),
                     area(),
@@ -400,7 +400,7 @@
                     scale(1),
                     origin('center'),
                 ]);
-                const bribeText =  add([
+ */                const bribeText =  add([
                   text('PAY BRIBE\n(1600 CREDITS)', {
                       size: 24,
                   }),
@@ -418,9 +418,9 @@
                   destroy(laserText)
                   destroy(shipText)
                   destroy(bribeText)
-                  destroy(laserIcon)
-                  destroy(shipIcon)
-                  destroy(bribeIcon)
+//                  destroy(laserIcon)
+//                  destroy(shipIcon)
+//                  destroy(bribeIcon)
                 })
                 tween(laserText, width()*.25)
                 validate(laserText, laserSprite!='laser3'&&credits>laserCost)
@@ -631,7 +631,7 @@
                           console.log('WON')
                           player.won = true
                           wait(.15, ()=>{
-                            player.yvel-=1
+                            //player.yvel-=1
                           })
                           wait(3.15, ()=>{
                             go('game', 'CONGRATULATIONS! YOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN')
@@ -647,7 +647,7 @@
                         let jackpot = parseInt(100000+rand(100000))
                         addCredits(jackpot)
                         wait(.15, ()=>{
-                            player.yvel-=1
+                            //player.yvel-=1
                           })
                           wait(3.15, ()=>{
                             go('game', 'YOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS')
