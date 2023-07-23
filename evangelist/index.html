@@ -743,7 +743,7 @@
                 bossSpawned = true
                 const boss = add([
                     sprite('guard5'),
-                    pos(width()/2, -100),
+                    pos(width()/2, -300),
                     area({scale:.9}),
                     body(),
                     gravity(0),
@@ -767,9 +767,9 @@
                   boss.onUpdate(()=>{
 
                     if(player.pos.x>boss.pos.x){
-                      if(boss.xvel<100) boss.xvel+=5
+                      if(boss.xvel<30) boss.xvel+=1
                     }else{
-                      if(boss.xvel>-100) boss.xvel-=5
+                      if(boss.xvel>-30) boss.xvel-=1
                     }
                     let distance = 200
                     if(Math.abs(player.pos.x-boss.pos.x)<10){
