@@ -61,21 +61,21 @@
             cost: 900,
             hp:15,
             sprite:'playerl3',
-            text: 'SHIP UPGRADE\n($900 CREDITS)'
+            text: 'SHIP UPGRADE\n(900 CREDITS)'
           },
           playerl3:{
             speed:60,
             cost: 3000,
             hp:30,
             sprite: 'playerl5',
-            text: 'SHIP UPGRADE 2\n($3000 CREDITS)'
+            text: 'SHIP UPGRADE 2\n(3000 CREDITS)'
           },
           playerl5:{
             speed:90,
             cost: 3000,
             hp:30,
             sprite: 'playerl5',
-            text: 'SHIP UPGRADED\n($3000 CREDITS)'
+            text: 'SHIP UPGRADED\n(3000 CREDITS)'
           },
         }
         let instructionsCollideFlag = false
@@ -125,7 +125,7 @@
 
         }
 
-        scene('game', () => {
+        scene('game', (instmsg) => {
             layers(['bg', 'mg', 'fg', 'obj', 'ui'])
             asteroidChance = 0;
             reward = 0;
@@ -135,7 +135,7 @@
             function addCredits(cred){
               creditText.value += cred
               credits = creditText.value
-              creditText.text = "CREDITS: $"+creditText.value
+              creditText.text = "CREDITS: "+creditText.value
               localStorage.setItem("credits", creditText.value);
             }
             function tween(spr, x, delay=0){
@@ -286,7 +286,7 @@
                 'instructionText',
             ])
             let instructions = add([
-                text('USE ARROW KEYS TO MOVE, SPACE TO FIRE.\nSHOOT ONE OF THE MENU OPTIONS ABOVE.',{
+                text(instmsg||'USE ARROW KEYS TO MOVE, SPACE TO FIRE.\nSHOOT ONE OF THE MENU OPTIONS ABOVE.',{
                     size: 24,
                     width:width()
                 }),
@@ -300,7 +300,7 @@
               tween(instructionText, width()*.75)
               explosion(width()/2, height()*.25, 40)
               upgradesText =  add([
-                text('UPGRADES\n($'+credits+" CREDITS)",{
+                text('SHOP\n('+credits+" CREDITS)",{
                     size: 24,
                 }),
                 area(),
@@ -328,7 +328,7 @@
                 destroy(instructionText)
                 destroy(instructions)
                 const creditText =  add([
-                  text('CREDITS: $'+credits, {
+                  text('CREDITS: '+credits, {
                       size: 24,
                   }),
                   area(),
@@ -350,8 +350,8 @@
                     origin('center'),
                 ]);
 
-                const laserSubmessage = 'LASER UPGRADE'+(laserCost==2200?' 2':'')+'\n($'
-                const laserTextmessage = laserSprite=='laser3'?'LASER UPGRADED\n($2200)':laserSubmessage+laserCost+' CREDITS)'
+                const laserSubmessage = 'LASER UPGRADE'+(laserCost==2200?' 2':'')+'\n('
+                const laserTextmessage = laserSprite=='laser3'?'LASER UPGRADED\n(2200)':laserSubmessage+laserCost+' CREDITS)'
                 const laserText =  add([
                   text(laserTextmessage, {
                       size: 24,
@@ -401,7 +401,7 @@
                     origin('center'),
                 ]);
                 const bribeText =  add([
-                  text('PAY BRIBE\n($1600 CREDITS)', {
+                  text('PAY BRIBE\n(1600 CREDITS)', {
                       size: 24,
                   }),
                   area(),
@@ -436,15 +436,15 @@
                     let pos = laserText.pos
                     spawnPowerup('laser', pos.x, pos.y)
                     laserText.moveTo(-500, laserText.pos.y)
-                    if(laserText.text== 'LASER UPGRADE 2\n($2200 CREDITS)'){
+                    if(laserText.text== 'LASER UPGRADE 2\n(2200 CREDITS)'){
                       laserText.color = rgb(rgb(160, 160, 160))
                       credits -= 2200
                     }else{
                       credits -= 700
                     }
-                    laserText.text = 'LASER UPGRADE 2\n($2200 CREDITS)'
+                    laserText.text = 'LASER UPGRADE 2\n(2200 CREDITS)'
                     localStorage.setItem("credits", credits);
-                    creditText.text='CREDITS: $'+credits
+                    creditText.text='CREDITS: '+credits
                     tween(laserText, width()*.25, .5)
                     validate(laserText, laserSprite!='laser3'&&credits>laserCost)
                     validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
@@ -461,7 +461,7 @@
                     shipText.ready = false
                     credits -= shipUpgrades[playerSprite].cost
                     localStorage.setItem("credits", credits);
-                    creditText.text='CREDITS: $'+credits
+                    creditText.text='CREDITS: '+credits
                     playerSprite=shipUpgrades[playerSprite].sprite
                     shipText.text = shipUpgrades[playerSprite].text
                     destroy(s)
@@ -484,7 +484,7 @@
                     bribeText.ready = false
                     credits -= 1600
                     localStorage.setItem("credits", credits);
-                    creditText.text='CREDITS: $'+credits
+                    creditText.text='CREDITS: '+credits
                     destroy(s)
                     let pos = bribeText.pos
                     spawnPowerup('bribe', pos.x, pos.y)
@@ -525,6 +525,19 @@
                   maxhp: shipUpgrades[playerSprite].hp
                 }             
             ]);
+            player.onCollide('kills', (h)=>{
+              explosion(player.pos.x, player.pos.y, 10, 160, 160, 160 ,15)
+                for(i=0;i<3;i++){
+                  wait(i*.2, function(){
+                    explosion(player.pos.x, player.pos.y, 10, 200 ,100 ,10, 15)
+                  })                  
+                }
+                destroy(player)
+                wait(3, ()=>{
+                  go('game', 'YOU WERE CRUSHED BY THE GIANT ASTEROID')
+                }) 
+            })
+
             player.onCollide('hurts', (h)=>{
               sprCount--
               destroy(h)
@@ -543,7 +556,7 @@
                 }
                 destroy(player)
                 wait(3, ()=>{
-                  go('game')
+                  go('game', 'YOUR SHIELDS WERE DEPLETED')
                 })
               }
             })
@@ -608,22 +621,38 @@
                       shake(3)
                       if(e.type==='asteroid'){
                         if(!bribed) reward+=.5
-                        bountyText.text = "BOUNTY: $"+reward*100
+                        bountyText.text = "BOUNTY: "+reward*100
                         addCredits(parseInt((rand(10)+5)*10+rand(10)))
                       }else if(e.type==='guard'){
                         if(!bribed) reward+=1
-                        bountyText.text = "BOUNTY: $"+reward*100
+                        bountyText.text = "BOUNTY: "+reward*100
                       }else if(e.type==='boss'){
                         if(e.level&&e.level==5){
                           console.log('WON')
-
-                          wait(3, ()=>{
-                            player.yvel-=70
+                          player.won = true
+                          wait(.15, ()=>{
+                            player.yvel-=1
                           })
                           wait(3.15, ()=>{
-                            go('game')
+                            go('game', 'CONGRATULATIONS! YOU DEFEATED THE CAPTAIN OF THE SYNFICATE GUARDSMAN')
                           })
                         }
+                      }else if(e.type==='masteroid'){
+                        player.won = true
+                        for(i=0;i<5;i++){ 
+                          wait(i*.2, function(){
+                            explosion(e.pos.x+(e.width*(1-rand(2))), e.pos.y, 10, 200 ,100 ,10, 15)
+                          })                  
+                        }
+                        let jackpot = parseInt(100000+rand(100000))
+                        addCredits(jackpot)
+                        wait(.15, ()=>{
+                            player.yvel-=1
+                          })
+                          wait(3.15, ()=>{
+                            go('game', 'YOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS')
+                          })
+                        
                       }
                       if(bribed) {
                         bountyText.color = rgb(25, 255, 25) 
@@ -632,7 +661,7 @@
                       }
                       destroy(e)
                     }
-                    e.vel-=30
+                    e.vel-=e.type==='masteroid'?.3:30
                   })
                 }
               }
@@ -650,7 +679,7 @@
                       { value: +player.hp },
                   ])
                   creditText = add([
-                      text("CREDITS: $"+credits, {
+                      text("CREDITS: "+credits, {
                           size: 24,
                           width:300
                       }),
@@ -676,8 +705,42 @@
                   destroy(upgradesText)
                   destroy(instructions)
                   asteroidChance = 5
-                  wait(60, ()=>{
-                    bribed=false
+
+                  if(bribed) wait(120, ()=>{
+                    //bribed=false
+                    const masteroid = add([
+                    sprite('asteroid3'),
+                    pos(width()/2, -90),
+                    area({scale:.9}),
+                    body(),
+                    scale(.9),
+                    gravity(0),
+                    layer('mg'),
+                    origin('center'),
+                    rotate(),
+                    'asteroid',
+                    'kills',
+                    'canhit',
+                    {
+                      rvel:10-rand(20),
+                      vel: 10,
+                      rdir: rand(2)>1,
+                      hp: 300,
+                      type: 'masteroid'
+                    }             
+                  ]);
+                  masteroid.onUpdate(()=>{
+                    if(masteroid.vel<30)masteroid.vel+=2
+                    masteroid.moveTo(masteroid.pos.x, masteroid.pos.y+=masteroid.vel*dt())
+                    masteroid.angle = masteroid.rdir?masteroid.angle-masteroid.rvel*dt():masteroid.angle+masteroid.rvel*dt()
+                    if(masteroid.pos.y>height()+100||masteroid.pos.y<-100){
+                      masteroid.moveTo(width()/2, -100)
+                    } 
+                  })
+                  masteroid.onCollide(player,(a)=>{
+                    player.hp=0
+                  })
+
                   })
                 }
               })
@@ -702,19 +765,21 @@
                 }
                 //go('game')
               })
+              if(!player.won){
+                if(isKeyDown('up')){
+                  player.yvel-=playerSpeed*dt()
+                }else if(isKeyDown('down')){
+                  player.yvel+=playerSpeed*dt()
+                } 
+                if(isKeyDown('left')){
+                  player.xvel-=playerSpeed*dt()
+                }else if(isKeyDown('right')){
+                  player.xvel+=playerSpeed*dt()
+                }
 
-              if(isKeyDown('up')){
-                player.yvel-=playerSpeed*dt()
-              }else if(isKeyDown('down')){
-                player.yvel+=playerSpeed*dt()
-              } 
-              if(isKeyDown('left')){
-                player.xvel-=playerSpeed*dt()
-              }else if(isKeyDown('right')){
-                player.xvel+=playerSpeed*dt()
               }
-              player.xvel=player.xvel*FALLOFF
-              player.yvel=player.yvel*FALLOFF
+              if(!player.won) player.xvel=player.xvel*FALLOFF
+              if(!player.won) player.yvel=player.yvel*FALLOFF
               player.moveTo(player.pos.x+player.xvel, player.pos.y+player.yvel)
               if(player.pos.y>height()){
                 player.moveTo(player.pos.x, height())
@@ -730,7 +795,7 @@
            
             onUpdate(()=>{
               console.log()
-              if(reward>2){
+              if(reward>30){
                 bossTrigger = true
                 bossTriggered = true
               }
@@ -743,7 +808,7 @@
                 bossSpawned = true
                 const boss = add([
                     sprite('guard5'),
-                    pos(width()/2, -300),
+                    pos(width()/2, -100),
                     area({scale:.9}),
                     body(),
                     gravity(0),
@@ -758,7 +823,7 @@
                     {
                       xvel: 0,
                       yvel: rand(200),
-                      hp: rand(12)+40,
+                      hp: 180,
                       type: 'boss',
                       sdelta:0,
                       level:5,
@@ -767,19 +832,21 @@
                   boss.onUpdate(()=>{
 
                     if(player.pos.x>boss.pos.x){
-                      if(boss.xvel<30) boss.xvel+=1
+                      if(boss.xvel<40) boss.xvel+=6
                     }else{
-                      if(boss.xvel>-30) boss.xvel-=1
+                      if(boss.xvel>-40) boss.xvel-=6
                     }
-                    let distance = 200
-                    if(Math.abs(player.pos.x-boss.pos.x)<10){
+                    let distance = 400
+                    if(Math.abs(player.pos.x-boss.pos.x)<rand(260)){
+                      boss.yvel-=2
+                      boss.xvel+=10-rand(20)
                       let t = time()
-                      if(t-boss.sdelta>1){
+                      if(t-boss.sdelta>.1){
                         boss.sdelta = t;
                         sprCount++
                         const es = add([
                         sprite('laser4'),
-                        pos(boss.pos.x, boss.pos.y+16),
+                        pos(boss.pos.x+20-rand(40), boss.pos.y+16),
                         area(),
                         layer('bg'),
                         scale(1),
@@ -795,11 +862,13 @@
                           }
                         })
                       }
-                    }
+                    }else(
+                      boss.xvel = (player.pos.x-boss.pos.x)>0?300:-300
+                    )
                     if(player.pos.y-distance>boss.pos.y){
-                      if(boss.yvel<200) boss.yvel+=10
+                      if(boss.yvel<20) boss.yvel+=5
                     }else{
-                      if(boss.yvel>-200) boss.yvel-=10
+                      if(boss.yvel>-20) boss.yvel-=5
                     }
                     boss.moveTo(boss.pos.x+=boss.xvel*dt(), boss.pos.y+=boss.yvel*dt())
               
