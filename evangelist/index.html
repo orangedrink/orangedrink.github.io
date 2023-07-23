@@ -89,6 +89,7 @@
         let reward = 0
         let sprCount = 0
         let laserCost = 700
+        let paused = false
         if(laserSprite=='laser2') laserCost = 2200
         function starfield(){
           //Create starfield
@@ -126,6 +127,11 @@
         }
 
         scene('game', (instmsg) => {
+            paused = true
+              wait(1, ()=>{
+                paused = false
+            })
+
             layers(['bg', 'mg', 'fg', 'obj', 'ui'])
             asteroidChance = 0;
             reward = 0;
@@ -309,6 +315,11 @@
                 origin('center'),
               ])
               upgradesText.onCollide('shot', function(s){
+                paused = true
+                  wait(.75, ()=>[
+                    paused = false
+                  ])
+                get('shot').forEach((s)=>{destroy(s)})
                 destroy(s)
                 explosion(upgradesText.pos.x, upgradesText.pos.y, 40)
                 destroy(upgradesText);
@@ -534,7 +545,7 @@
                 }
                 destroy(player)
                 wait(3, ()=>{
-                  go('game', 'YOU WERE CRUSHED BY THE GIANT ASTEROID')
+                  go('game', h.killmsg)
                 }) 
             })
 
@@ -556,7 +567,7 @@
                 }
                 destroy(player)
                 wait(3, ()=>{
-                  go('game', 'YOUR SHIELDS WERE DEPLETED')
+                  go('game', 'GAME OVER\nYOUR SHIELDS WERE DEPLETED')
                 })
               }
             })
@@ -584,7 +595,7 @@
                   destroy(thruster)
                 }
               })  
-              if(isKeyDown('space')){
+              if(!paused&&isKeyDown('space')){
                 let t = time()
                 if(t-player.sdelta>cooldown){
                   player.sdelta = t
@@ -629,16 +640,16 @@
                       }else if(e.type==='boss'){
                         if(e.level&&e.level==5){
                           console.log('WON')
-                          player.won = true
+                          paused = true
                           wait(.15, ()=>{
                             //player.yvel-=1
                           })
                           wait(3.15, ()=>{
-                            go('game', 'CONGRATULATIONS! YOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN')
+                            go('game', 'CONGRATULATIONS!\nYOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN')
                           })
                         }
                       }else if(e.type==='masteroid'){
-                        player.won = true
+                        paused = true
                         for(i=0;i<5;i++){ 
                           wait(i*.2, function(){
                             explosion(e.pos.x+(e.width*(1-rand(2))), e.pos.y, 10, 200 ,100 ,10, 15)
@@ -650,7 +661,7 @@
                             //player.yvel-=1
                           })
                           wait(3.15, ()=>{
-                            go('game', 'YOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS')
+                            go('game', 'CONGRATULATIONS\nYOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS')
                           })
                         
                       }
@@ -705,7 +716,6 @@
                   destroy(upgradesText)
                   destroy(instructions)
                   asteroidChance = 5
-
                   if(bribed) wait(120, ()=>{
                     //bribed=false
                     const masteroid = add([
@@ -726,7 +736,9 @@
                       vel: 10,
                       rdir: rand(2)>1,
                       hp: 300,
-                      type: 'masteroid'
+                      type: 'masteroid',
+                      deadmsg: 'GAME OVER\nYOUR SHIP WAS CRUSHED BY THE CAPTAIN OF THE SYNDICATE GUARD'
+
                     }             
                   ]);
                   masteroid.onUpdate(()=>{
@@ -765,7 +777,7 @@
                 }
                 //go('game')
               })
-              if(!player.won){
+              if(!paused){
                 if(isKeyDown('up')){
                   player.yvel-=playerSpeed*dt()
                 }else if(isKeyDown('down')){
@@ -778,8 +790,8 @@
                 }
 
               }
-              if(!player.won) player.xvel=player.xvel*FALLOFF
-              if(!player.won) player.yvel=player.yvel*FALLOFF
+              player.xvel=player.xvel*FALLOFF
+              player.yvel=player.yvel*FALLOFF
               player.moveTo(player.pos.x+player.xvel, player.pos.y+player.yvel)
               if(player.pos.y>height()){
                 player.moveTo(player.pos.x, height())
@@ -817,7 +829,7 @@
                     origin('center'),
                     rotate(),
                     'boss',
-                    'hurts',
+                    'kills',
                     'canhit',
                     'guard',
                     {
@@ -827,6 +839,7 @@
                       type: 'boss',
                       sdelta:0,
                       level:5,
+                      deadmsg: 'GAME OVER\nYOUR SHIP WAS CRUSHED BY THE CAPTAIN OF THE SYNDICATE GUARD'
                     }             
                   ]);
                   boss.onUpdate(()=>{
