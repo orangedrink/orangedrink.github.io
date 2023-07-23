@@ -46,19 +46,50 @@
         loadSprite('guard3', 'guard_l3.png')
         loadSprite('guard4', 'guard_l4.png')
         loadSprite('guard5', 'guard_l5.png')
+        loadSprite('powerup1', 'powerup1.png')
+        loadSprite('bribeIcon', 'bribe_icon.png')
+        loadSprite('shipIcon', 'ship_icon.png')
+        loadSprite('laserIcon', 'laser_icon.png')
 
         const SCREEN_WIDTH = width()
         const SCREEN_HEIGHT = height()
         const FALLOFF = .9
         const MAX_SPRITES = 60
+        const shipUpgrades ={
+          playerl1:{
+            speed:40,
+            cost: 900,
+            hp:15,
+            sprite:'playerl3',
+            text: 'SHIP UPGRADE\n($900 CREDITS)'
+          },
+          playerl3:{
+            speed:60,
+            cost: 3000,
+            hp:30,
+            sprite: 'playerl5',
+            text: 'SHIP UPGRADE 2\n($3000 CREDITS)'
+          },
+          playerl5:{
+            speed:90,
+            cost: 3000,
+            hp:30,
+            sprite: 'playerl5',
+            text: 'SHIP UPGRADED\n($3000 CREDITS)'
+          },
+        }
         let instructionsCollideFlag = false
         let startCollideFlag = false
-        let credits = parseInt(localStorage.getItem('credits'))
-        let playerSpeed = 40;
-        let cooldown = .25
+        let credits = parseInt(localStorage.getItem('credits'))||0
+        let cooldown = parseFloat(localStorage.getItem('cooldown'))||.2
+        let laserSprite = localStorage.getItem('laserSprite')||'laser1'
+        let playerSprite = localStorage.getItem('playerSprite')||'playerl1'
+        let playerSpeed = parseInt(localStorage.getItem('playerSpeed'))||40;
         let asteroidChance = 0
         let reward = 0
         let sprCount = 0
+        let laserCost = 700
+        if(laserSprite=='laser2') laserCost = 2200
         function starfield(){
           //Create starfield
           const STAR_COUNT = 200;
@@ -107,13 +138,97 @@
               creditText.text = "CREDITS: $"+creditText.value
               localStorage.setItem("credits", creditText.value);
             }
-            function tween(spr, x, y){
+            function tween(spr, x, delay=0){
               for(i=0;i<160;i++){
-                    wait(i*.01, ()=>{
+                    wait((i*.01)+delay, ()=>{
                       let xoffs = x - spr.pos.x
                       spr.moveTo(spr.pos.x+(xoffs*.2), spr.pos.y)
                     })
               }
+            }
+            function getShieldPerent(){
+              return parseInt(player.hp/player.maxhp*100)
+            }
+            function validate(text, cond){
+              if(!cond){
+                text.ready = false
+                text.color = rgb(160, 160, 160)
+              }
+            }
+            function spawnPowerup(type, x, y){
+              if(type=='laser'){
+                c1=255
+                c2=151
+                c3=253
+              }else if(type=='ship'){
+                c2=82
+                c1=122
+                c3=255
+              }else if(type=='bribe'){
+                c1=82
+                c2=255
+                c3=82
+              }
+              const pu = add([
+                  sprite('powerup1'),
+                  pos(x,y),
+                  origin('center'),
+                  layer('fg'),
+                  area(),
+                  {
+                    xvel:0,
+                    yvel:0,
+                  }
+              ])
+              pu.onUpdate(function(){
+                if(player.pos.y>pu.pos.y){
+                      if(pu.yvel<500) pu.yvel+=25
+                }else{
+                      if(pu.yvel>-500) pu.yvel-=25
+                }
+                  
+                if(player.pos.x>pu.pos.x){
+                      if(pu.xvel<500) pu.xvel+=25
+                }else{ 
+                      if(pu.xvel>-500) pu.xvel-=25
+                }
+                pu.moveBy(pu.xvel*dt(), pu.yvel*dt())
+                drawCircle({
+                  pos: vec2(pu.pos.x, pu.pos.y),
+                  radius: 8,
+                  color: rgb(c1, c2, c3),
+                })
+                explosion(pu.pos.x, pu.pos.y, 1 , c1, c2, c3)
+              })
+              pu.onCollide('player', function(){
+                destroy(pu)
+                if(type=='laser'){
+                  if(laserSprite == 'laser1'){
+                      cooldown = .1
+                      localStorage.setItem('cooldown', cooldown)
+                      laserSprite = 'laser2'
+                      localStorage.setItem('laserSprite', laserSprite)
+                      laserCost = 2200
+                  }else if(laserSprite == 'laser2'){
+                      cooldown = .05
+                      localStorage.setItem('cooldown', cooldown)
+                      laserSprite = 'laser3'
+                      localStorage.setItem('laserSprite', laserSprite)
+                  }
+                  explosion(player.pos.x, player.pos.y, 40)
+                  wait(.2, ()=>{
+                    explosion(player.pos.x, player.pos.y, 40)
+                  })
+                }else if(type==='ship'){
+                    localStorage.setItem('playerSprite', playerSprite)
+                    playerSpeed = shipUpgrades[playerSprite].speed
+                    localStorage.setItem('playerSpeed', playerSprite)
+                    player.use(sprite(playerSprite)) 
+
+                }else if(type==='bribe'){
+                    bribed = true 
+                }
+              })
             }
             function explosion(x, y, count, c1=235, c2=141, c3=243, size=10){
               for(i=0;i<count;i++){
@@ -146,13 +261,13 @@
 
             starfield()
             let creditText
+            let bribed = false
             let bountyText
             let startText = add([
                 text('START GAME',{
                     size: 24,
-                    width:300
                 }),
-                area({ scale: 2}),
+                area(),
                 pos(width()*.333, height()*.25),
                 origin('center'),
                 'startText',
@@ -162,7 +277,7 @@
                     size: 24,
                     width:300
                 }),
-                area({ scale: 2 }),
+                area(),
                 pos(width()*.666, height()*.25),
                 origin('center'),
                 'instructionText',
@@ -184,25 +299,212 @@
               upgradesText =  add([
                 text('UPGRADES\n($'+credits+" CREDITS)",{
                     size: 24,
-                    width:width()
                 }),
-                area({ scale: 0.5 }),
+                area(),
                 layer('ui'),
                 pos(width()/2, height()*.25),
                 origin('center'),
               ])
-              upgradesText.onCollide('shot', function(){
+              upgradesText.onCollide('shot', function(s){
+                destroy(s)
                 explosion(upgradesText.pos.x, upgradesText.pos.y, 40)
                 destroy(upgradesText);
                 destroy(startText)
+                startText = add([
+                    text('START GAME',{
+                        size: 24,
+                    }),
+                    area(),
+                    pos(width()*.5, height()*.5),
+                    origin('center'),
+                    'startText',
+                ])
+                get('shot').forEach((s)=>{
+                  destroy(s)
+                })
                 destroy(instructionText)
                 destroy(instructions)
+                const creditText =  add([
+                  text('CREDITS: $'+credits, {
+                      size: 24,
+                  }),
+                  area(),
+                  layer('ui'),
+                  pos(-500, height()*.85 ),
+                  origin('center'),
+                  {
+                    ready: true
+                  },
+                ])
+                const laserIcon = add([
+                    sprite('laserIcon'),
+                    pos(width()*.25, height()*.2),
+                    area(),
+                    //body(),
+                    //gravity(16),
+                    layer('ui'),
+                    scale(1),
+                    origin('center'),
+                ]);
 
+                const laserSubmessage = 'LASER UPGRADE'+(laserCost==2200?' 2':'')+'\n($'
+                const laserTextmessage = laserSprite=='laser3'?'LASER UPGRADED\n($2200)':laserSubmessage+laserCost+' CREDITS)'
+                const laserText =  add([
+                  text(laserTextmessage, {
+                      size: 24,
+                  }),
+                  area(),
+                  layer('ui'),
+                  pos(-500, height()*.1 ),
+                  origin('center'),
+                  {
+                    ready: true
+                  },
+                ])
+                if(Math.abs(player.pos.y-height()/2)<60){
+                  player.yvel+=10
+                }
+                const shipIcon = add([
+                    sprite('shipIcon'),
+                    pos(width()*.5, height()*.2),
+                    area(),
+                    //body(),
+                    //gravity(16),
+                    layer('ui'),
+                    scale(1),
+                    origin('center'),
+                ]);
+
+                const shipText =  add([
+                  text(shipUpgrades[playerSprite].text, {
+                      size: 24,
+                  }),
+                  area(),
+                  layer('ui'),
+                  pos(-500, height()*.1 ),
+                  origin('center'),
+                  {
+                    ready: true
+                  },
+                ])
+                const bribeIcon = add([
+                    sprite('bribeIcon'),
+                    pos(width()*.75, height()*.2),
+                    area(),
+                    //body(),
+                    //gravity(16),
+                    layer('ui'),
+                    scale(1),
+                    origin('center'),
+                ]);
+                const bribeText =  add([
+                  text('PAY BRIBE\n($1600 CREDITS)', {
+                      size: 24,
+                  }),
+                  area(),
+                  layer('ui'),
+                  pos(-500, height()*.1 ),
+                  origin('center'),
+                  {
+                    ready: true
+                  },
+                ])
+                
+                startText.onCollide('shot', function(s){
+                  destroy(creditText)
+                  destroy(laserText)
+                  destroy(shipText)
+                  destroy(bribeText)
+                  destroy(laserIcon)
+                  destroy(shipIcon)
+                  destroy(bribeIcon)
+                })
+                tween(laserText, width()*.25)
+                validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                tween(shipText, width()/2)
+                validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                tween(bribeText, width()*.75)
+                validate(bribeText, credits>1600)
+                tween(creditText, width()*.5)
+                laserText.onCollide('shot', function(s){
+                  if(laserText.ready){
+                    laserText.ready = false
+                    destroy(s)
+                    let pos = laserText.pos
+                    spawnPowerup('laser', pos.x, pos.y)
+                    laserText.moveTo(-500, laserText.pos.y)
+                    if(laserText.text== 'LASER UPGRADE 2\n($2200 CREDITS)'){
+                      laserText.color = rgb(rgb(160, 160, 160))
+                      credits -= 2200
+                    }else{
+                      credits -= 700
+                    }
+                    laserText.text = 'LASER UPGRADE 2\n($2200 CREDITS)'
+                    localStorage.setItem("credits", credits);
+                    creditText.text='CREDITS: $'+credits
+                    tween(laserText, width()*.25, .5)
+                    validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                    validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                    validate(bribeText, !bribed&&credits>1600)
+                    explosion(pos.x, pos.y, 40)
+                    wait(1.25, ()=>{
+                      laserText.ready = true;
+                      validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                    })
+                  }
+                })
+                shipText.onCollide('shot', function(s){
+                  if(shipText.ready){
+                    shipText.ready = false
+                    credits -= shipUpgrades[playerSprite].cost
+                    localStorage.setItem("credits", credits);
+                    creditText.text='CREDITS: $'+credits
+                    playerSprite=shipUpgrades[playerSprite].sprite
+                    shipText.text = shipUpgrades[playerSprite].text
+                    destroy(s)
+                    let pos = shipText.pos
+                    spawnPowerup('ship', pos.x, pos.y)
+                    shipText.moveTo(-500, shipText.pos.y)
+                    tween(shipText, width()*.5, .5)
+                    validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                    validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                    validate(bribeText, !bribed&&credits>1600)
+                    explosion(pos.x, pos.y, 40)
+                    wait(1.25, ()=>{
+                      shipText.ready = true;
+                      validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                    })
+                  }
+                })
+                bribeText.onCollide('shot', function(s){
+                  if(bribeText.ready){
+                    bribeText.ready = false
+                    credits -= 1600
+                    localStorage.setItem("credits", credits);
+                    creditText.text='CREDITS: $'+credits
+                    destroy(s)
+                    let pos = bribeText.pos
+                    spawnPowerup('bribe', pos.x, pos.y)
+                    bribeText.moveTo(-500, bribeText.pos.y)
+                    tween(bribeText, width()*.75, .5)
+                    explosion(pos.x, pos.y, 40)
+                    validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                    validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                    validate(bribeText, !bribed&&credits>1600)
+                    bribeText.color = rgb(rgb(160, 160, 160))
+                    wait(1.25, ()=>{
+                      bribeText.ready = true; 
+                      validate(bribeText, !bribed&&credits>1600)
+                    })
+
+
+                  }
+                })
               })
             }
             const player = add([
-                sprite('playerl1'),
-                pos(width()/2, height()/2),
+                sprite(playerSprite),
+                pos(width()/2, height()*.5),
                 area(),
                 //body(),
                 //gravity(16),
@@ -216,19 +518,28 @@
                   sdelta:0,
                   thusterPos:.35,
                   level: 1,
-                  hp: 10,
+                  hp: shipUpgrades[playerSprite].hp,
+                  maxhp: shipUpgrades[playerSprite].hp
                 }             
             ]);
             player.onCollide('hurts', (h)=>{
               sprCount--
               destroy(h)
               player.hp--
+              shieldText.text = 'SHIELD: %'+getShieldPerent()
+              if(player.hp<3){
+                shieldText.color =rgb(255, 0, 0)
+              }
               player.yvel+=3
               explosion(player.pos.x, player.pos.y, 10, 160, 160, 160 ,15)
               if(player.hp<1){
-                explosion(player.pos.x, player.pos.y, 20, 200 ,100 ,10, 15)
+                for(i=0;i<10;i++){
+                  wait(i*.2, function(){
+                    explosion(player.pos.x, player.pos.y, 20, 200 ,100 ,10, 15)
+                  })                  
+                }
                 destroy(player)
-                wait(2, ()=>{
+                wait(3, ()=>{
                   go('game')
                 })
               }
@@ -258,22 +569,27 @@
                 }
               })  
               if(isKeyDown('space')){
-                console.log(sprCount)
                 let t = time()
                 if(t-player.sdelta>cooldown){
                   player.sdelta = t
                   const s = add([
-                    sprite('laser1'),
+                    sprite(laserSprite),
                     pos(player.pos.x, player.pos.y-16),
                     area(),
                     layer('mg'),
                     scale(1),
                     origin('center'),
-                    'shot'
+                    'shot',
+                    {
+                      yvel:0
+                    }
                   ])
                   if(rand(3)<1) explosion(player.pos.x, player.pos.y-(player.height/2), 1)
                   s.onUpdate(()=>{
-                    s.moveTo(s.pos.x, s.pos.y-=600*dt())
+                    if(laserSprite=='laser3'){
+                      s.yvel=10-rand(20)
+                    }
+                    s.moveTo(s.pos.x+s.yvel, s.pos.y-=600*dt())
                     if(s.pos.y<-10){
                       destroy(s)
                     }
@@ -287,12 +603,17 @@
                       explosion(e.pos.x, e.pos.y, 5, 150, 150, 150, 15)
                       shake(3)
                       if(e.type==='asteroid'){
-                        reward+=.5
+                        if(!bribed) reward+=.5
                         bountyText.text = "BOUNTY: $"+reward*100
                         addCredits(parseInt((rand(10)+5)*10+rand(10)))
                       }else if(e.type==='guard'){
-                        reward+=1
+                        if(!bribed) reward+=1
                         bountyText.text = "BOUNTY: $"+reward*100
+                      }
+                      if(bribed) {
+                        bountyText.color = rgb(25, 255, 25) 
+                      } else{
+                        bountyText.color = rgb(255, 255, 255) 
                       }
                       sprCount--
                       destroy(e)
@@ -304,12 +625,22 @@
               onCollide('startText', 'shot', (s,t)=>{
                 if(!startCollideFlag){
                   startCollideFlag = true
+                  shieldText = add([
+                      text("SHIELD: %"+getShieldPerent(), {
+                          size: 24,
+                          width:300
+                      }),
+                      pos(width()-10, 20),
+                      origin('right'),
+                      layer('ui'),
+                      { value: +player.hp },
+                  ])
                   creditText = add([
                       text("CREDITS: $"+credits, {
                           size: 24,
                           width:300
                       }),
-                      pos(width()-10, 20),
+                      pos(width()-10, 44),
                       origin('right'),
                       layer('ui'),
                       { value: credits },
@@ -319,7 +650,7 @@
                           size: 24,
                           width:300
                       }),
-                      pos(width()-10, 44),
+                      pos(width()-10, 68),
                       origin('right'),
                       layer('ui'),
                       { value: reward },
@@ -331,6 +662,9 @@
                   destroy(upgradesText)
                   destroy(instructions)
                   asteroidChance = 5
+                  wait(60, ()=>{
+                    bribed=false
+                  })
                 }
               })
               onCollide('instructionText', 'shot', (s,t)=>{
