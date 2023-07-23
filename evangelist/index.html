@@ -54,7 +54,7 @@
         const SCREEN_WIDTH = width()
         const SCREEN_HEIGHT = height()
         const FALLOFF = .9
-        const MAX_SPRITES = 60
+        const MAX_SPRITES = 18
         const shipUpgrades ={
           playerl1:{
             speed:40,
@@ -222,7 +222,7 @@
                 }else if(type==='ship'){
                     localStorage.setItem('playerSprite', playerSprite)
                     playerSpeed = shipUpgrades[playerSprite].speed
-                    localStorage.setItem('playerSpeed', playerSprite)
+                    localStorage.setItem('playerSpeed', playerSpeed)
                     player.use(sprite(playerSprite)) 
 
                 }else if(type==='bribe'){
@@ -262,6 +262,9 @@
             starfield()
             let creditText
             let bribed = false
+            let bossTrigger
+            let bossTriggered
+            let bossSpawned
             let bountyText
             let startText = add([
                 text('START GAME',{
@@ -533,9 +536,9 @@
               player.yvel+=3
               explosion(player.pos.x, player.pos.y, 10, 160, 160, 160 ,15)
               if(player.hp<1){
-                for(i=0;i<10;i++){
+                for(i=0;i<3;i++){
                   wait(i*.2, function(){
-                    explosion(player.pos.x, player.pos.y, 20, 200 ,100 ,10, 15)
+                    explosion(player.pos.x, player.pos.y, 10, 200 ,100 ,10, 15)
                   })                  
                 }
                 destroy(player)
@@ -600,6 +603,7 @@
                     destroy(s)
                     e.hp--
                     if(e.hp<1) {
+                      sprCount--
                       explosion(e.pos.x, e.pos.y, 5, 150, 150, 150, 15)
                       shake(3)
                       if(e.type==='asteroid'){
@@ -609,13 +613,23 @@
                       }else if(e.type==='guard'){
                         if(!bribed) reward+=1
                         bountyText.text = "BOUNTY: $"+reward*100
+                      }else if(e.type==='boss'){
+                        if(e.level&&e.level==5){
+                          console.log('WON')
+
+                          wait(3, ()=>{
+                            player.yvel-=70
+                          })
+                          wait(3.15, ()=>{
+                            go('game')
+                          })
+                        }
                       }
                       if(bribed) {
                         bountyText.color = rgb(25, 255, 25) 
                       } else{
                         bountyText.color = rgb(255, 255, 255) 
                       }
-                      sprCount--
                       destroy(e)
                     }
                     e.vel-=30
@@ -715,8 +729,84 @@
             })
            
             onUpdate(()=>{
+              console.log()
+              if(reward>2){
+                bossTrigger = true
+                bossTriggered = true
+              }
+              if(get('canhit').length===0){
+                sprCount=0
+              }
+              if(!bossSpawned&&bossTrigger == true && get('guard').length===0){
+              //if(reward>20){
+                bossTrigger = false
+                bossSpawned = true
+                const boss = add([
+                    sprite('guard5'),
+                    pos(width()/2, -100),
+                    area({scale:.9}),
+                    body(),
+                    gravity(0),
+                    layer('mg'),
+                    scale(1),
+                    origin('center'),
+                    rotate(),
+                    'boss',
+                    'hurts',
+                    'canhit',
+                    'guard',
+                    {
+                      xvel: 0,
+                      yvel: rand(200),
+                      hp: rand(12)+40,
+                      type: 'boss',
+                      sdelta:0,
+                      level:5,
+                    }             
+                  ]);
+                  boss.onUpdate(()=>{
+
+                    if(player.pos.x>boss.pos.x){
+                      if(boss.xvel<100) boss.xvel+=5
+                    }else{
+                      if(boss.xvel>-100) boss.xvel-=5
+                    }
+                    let distance = 200
+                    if(Math.abs(player.pos.x-boss.pos.x)<10){
+                      let t = time()
+                      if(t-boss.sdelta>1){
+                        boss.sdelta = t;
+                        sprCount++
+                        const es = add([
+                        sprite('laser4'),
+                        pos(boss.pos.x, boss.pos.y+16),
+                        area(),
+                        layer('bg'),
+                        scale(1),
+                        origin('center'),
+                        'eshot',
+                        'hurts',
+                      ])
+                      if(rand(3)<1) explosion(player.pos.x, player.pos.y-(player.height/2), 1)
+                        es.onUpdate(()=>{
+                          es.moveTo(es.pos.x, es.pos.y+=600*dt())
+                          if(es.pos.y>height()){
+                            destroy(es)
+                          }
+                        })
+                      }
+                    }
+                    if(player.pos.y-distance>boss.pos.y){
+                      if(boss.yvel<200) boss.yvel+=10
+                    }else{
+                      if(boss.yvel>-200) boss.yvel-=10
+                    }
+                    boss.moveTo(boss.pos.x+=boss.xvel*dt(), boss.pos.y+=boss.yvel*dt())
+              
+                })
+              }
               asteroidChance?asteroidChance+=.005:0
-              if(sprCount<MAX_SPRITES&&rand(1000)<reward){
+              if(!bossTriggered&&!sprCount<MAX_SPRITES&&rand(1000)<reward){
                   sprCount+=1
                   let guardIndex = reward/5
                   if(guardIndex>3) guardIndex = 4
