@@ -661,7 +661,7 @@
                       }
                       destroy(e)
                     }
-                    e.vel-=e.type==='masteroid'?.3:30
+                    e.vel-=e.type==='masteroid'?13:30
                   })
                 }
               }
@@ -711,7 +711,7 @@
                     const masteroid = add([
                     sprite('asteroid3'),
                     pos(width()/2, -90),
-                    area({scale:.9}),
+                    area({scale:.8}),
                     body(),
                     scale(.9),
                     gravity(0),
