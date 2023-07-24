@@ -78,6 +78,27 @@
             text: 'SHIP UPGRADED\n(3000 CREDITS)'
           },
         }
+        const laserUpgrades ={
+          laser1:{
+            cooldown:.25,
+            cost: 900,
+            sprite:'laser2',
+            text: 'LASER UPGRADE\n(700 CREDITS)'
+          },
+          laser2:{
+            cooldown:.15,
+            cost: 900,
+            sprite:'laser3',
+            text: 'LASER UPGRADE\n(2200 CREDITS)'
+          },
+          laser3:{
+            cooldown:.1,
+            cost: 900,
+            sprite:'laser3',
+            text: 'NUKE\n(9000 CREDITS)'
+          },
+        }
+
         let instructionsCollideFlag = false
         let startCollideFlag = false
         let credits = parseInt(localStorage.getItem('credits'))||0
@@ -85,6 +106,7 @@
         let laserSprite = localStorage.getItem('laserSprite')||'laser1'
         let playerSprite = localStorage.getItem('playerSprite')||'playerl1'
         let playerSpeed = parseInt(localStorage.getItem('playerSpeed'))||40;
+        let nukes = parseInt(localStorage.getItem('nukes'))||0;
         let asteroidChance = 0
         let reward = 0
         let sprCount = 0
@@ -209,18 +231,15 @@
               pu.onCollide('player', function(){
                 destroy(pu)
                 if(type=='laser'){
-                  if(laserSprite == 'laser1'){
-                      cooldown = .1
-                      localStorage.setItem('cooldown', cooldown)
-                      laserSprite = 'laser2'
-                      localStorage.setItem('laserSprite', laserSprite)
-                      laserCost = 2200
-                  }else if(laserSprite == 'laser2'){
-                      cooldown = .05
-                      localStorage.setItem('cooldown', cooldown)
-                      laserSprite = 'laser3'
-                      localStorage.setItem('laserSprite', laserSprite)
-                  }
+                    if(laserSprite==='laser3'){
+                      nukes++
+                      localStorage.setItem('nukes', nukes)
+                    }
+                    laserSprite = laserUpgrades[laserSprite].sprite
+                    localStorage.setItem('laserSprite', laserSprite)
+                    cooldown = laserUpgrades[laserSprite].cooldown
+                    localStorage.setItem('cooldown', cooldown)
+
                   explosion(player.pos.x, player.pos.y, 40)
                   wait(.2, ()=>{
                     explosion(player.pos.x, player.pos.y, 40)
@@ -262,6 +281,114 @@
                   }
                 })               
 
+              }
+            }
+            function nuke(x, y, count, c1=235, c2=141, c3=243, size=10){
+              const n = add([
+                  sprite('powerup1'),
+                  circle(7),
+                  pos(x,y),
+                  origin('center'),
+                  //235,141,243
+                  color(c1, c2, c3),
+                  layer('mg'),
+                  area(),
+                  {
+                    ttl:100,
+                    xvel:0,
+                    yvel:6,
+                    timer:1
+                  }
+              ])
+              n.onUpdate(function(){
+                n.timer-=dt()
+                if(n.timer<0){
+                  nukexpl(n.pos.x, n.pos.y, count, c1, c2, c3, size)
+                  destroy(n)
+                }
+                n.yvel-=5
+                n.moveTo(n.pos.x+n.xvel*dt(), n.pos.y+n.yvel*dt())
+              })
+            }
+            function nukexpl(x, y, count, c1=235, c2=141, c3=243, size=10){
+              for(i=0;i<count;i++){
+                const tsize = rand(5)+size
+                const xpl = add([
+                  sprite('powerup1'),
+                  circle(tsize/3, tsize/3),
+                  pos(x,y),
+                  origin('center'),
+                  //235,141,243
+                  color(c1, c2, c3),
+                  layer('fg'),
+                  area(),
+                  {
+                    ttl:tsize,
+                    xvel:rand(12)-6,
+                    yvel:rand(12)-6,
+                  }
+                ])
+                xpl.onUpdate(()=>{
+                  //destroy(thruster)
+                  xpl.ttl-=.25
+                  xpl.scale = xpl.ttl*-.1
+                  xpl.moveTo(xpl.pos.x+(xpl.xvel*4), xpl.pos.y+(xpl.yvel*4))
+                  if(xpl.ttl<0){
+                    destroy(xpl)
+                  }
+                })               
+                xpl.onCollide('canhit', (e)=>{
+                  destroy(xpl)
+                  explosion(xpl.pos.x, xpl.pos.y, 3)
+                    e.hp-=1000
+                    if(e.hp<1) {
+                      sprCount--
+                      explosion(e.pos.x, e.pos.y, 5, 150, 150, 150, 15)
+                      shake(3)
+                      if(e.type==='asteroid'){
+                        if(!bribed) reward+=.5
+                        bountyText.text = "BOUNTY: "+reward*100
+                        addCredits(parseInt((rand(10)+5)*10+rand(10)))
+                      }else if(e.type==='guard'){
+                        if(!bribed) reward+=1
+                        bountyText.text = "BOUNTY: "+reward*100
+                      }else if(e.type==='boss'){
+                        if(e.level&&e.level==5){
+                          console.log('WON')
+                          paused = true
+                          wait(.15, ()=>{
+                            //player.yvel-=1
+                          })
+                          wait(3.15, ()=>{
+                            go('game', 'CONGRATULATIONS!\nYOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN')
+                          })
+                        }
+                      }else if(e.type==='masteroid'){
+                        paused = true
+                        for(i=0;i<5;i++){ 
+                          wait(i*.2, function(){
+                            explosion(e.pos.x+(e.width*(1-rand(2))), e.pos.y, 10, 200 ,100 ,10, 15)
+                          })                  
+                        }
+                        let jackpot = parseInt(100000+rand(100000))
+                        addCredits(jackpot)
+                        wait(.15, ()=>{
+                            //player.yvel-=1
+                          })
+                          wait(3.15, ()=>{
+                            go('game', 'CONGRATULATIONS\nYOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS')
+                          })
+                        
+                      }
+                      if(bribed) {
+                        bountyText.color = rgb(25, 255, 25) 
+                      } else{
+                        bountyText.color = rgb(255, 255, 255) 
+                      }
+                      destroy(e)
+                    }
+                    e.vel-=e.type==='masteroid'?13:30
+                })
               }
             }
 
@@ -361,10 +488,8 @@
                 //     origin('center'),
                 // ]);
 
-                const laserSubmessage = 'LASER UPGRADE'+(laserCost==2200?' 2':'')+'\n('
-                const laserTextmessage = laserSprite=='laser3'?'LASER UPGRADED\n(2200)':laserSubmessage+laserCost+' CREDITS)'
                 const laserText =  add([
-                  text(laserTextmessage, {
+                  text(laserUpgrades[laserSprite].text, {
                       size: 24,
                   }),
                   area(),
@@ -434,7 +559,7 @@
 //                  destroy(bribeIcon)
                 })
                 tween(laserText, width()*.25)
-                validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                validate(laserText, credits>laserUpgrades[laserSprite].cost)
                 tween(shipText, width()/2)
                 validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
                 tween(bribeText, width()*.75)
@@ -443,27 +568,22 @@
                 laserText.onCollide('shot', function(s){
                   if(laserText.ready){
                     laserText.ready = false
+                    credits -= laserUpgrades[laserSprite].cost
+                    localStorage.setItem("credits", credits);
+                    creditText.text='CREDITS: '+credits
+                    laserText.text = laserUpgrades[laserUpgrades[laserSprite].sprite].text
                     destroy(s)
                     let pos = laserText.pos
                     spawnPowerup('laser', pos.x, pos.y)
                     laserText.moveTo(-500, laserText.pos.y)
-                    if(laserText.text== 'LASER UPGRADE 2\n(2200 CREDITS)'){
-                      laserText.color = rgb(rgb(160, 160, 160))
-                      credits -= 2200
-                    }else{
-                      credits -= 700
-                    }
-                    laserText.text = 'LASER UPGRADE 2\n(2200 CREDITS)'
-                    localStorage.setItem("credits", credits);
-                    creditText.text='CREDITS: '+credits
                     tween(laserText, width()*.25, .5)
-                    validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                    validate(laserText, credits>laserUpgrades[laserSprite].cost)
                     validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
                     validate(bribeText, !bribed&&credits>1600)
                     explosion(pos.x, pos.y, 40)
                     wait(1.25, ()=>{
                       laserText.ready = true;
-                      validate(laserText, laserSprite!='laser3'&&credits>laserCost)
+                      validate(laserText, credits>laserUpgrades[laserSprite].cost)
                     })
                   }
                 })
@@ -545,7 +665,7 @@
                 }
                 destroy(player)
                 wait(3, ()=>{
-                  go('game', h.killmsg)
+                  go('game', h.deadmsg)
                 }) 
             })
 
@@ -595,6 +715,19 @@
                   destroy(thruster)
                 }
               })  
+              onKeyRelease('control',()=>{
+                if(asteroidChance>0&&nukes>0&&!paused&&!player.nukecooldown){
+                  player.nukecooldown = true
+                  nukes-=1
+                  localStorage.setItem('nukes', nukes)
+                  nukesText.text = 'NUKES: '+nukes
+                  wait(2,()=>{
+                    player.nukecooldown=false
+                  })
+                  
+                  nuke(player.pos.x, player.pos.y, 40)
+                }
+              })
               if(!paused&&isKeyDown('space')){
                 let t = time()
                 if(t-player.sdelta>cooldown){
@@ -699,15 +832,26 @@
                       layer('ui'),
                       { value: credits },
                   ])
-                  bountyText = add([
-                      text("", {
+                  nukesText = add([
+                      text("NUKES: "+nukes, {
                           size: 24,
                           width:300
                       }),
                       pos(width()-10, 68),
                       origin('right'),
                       layer('ui'),
-                      { value: reward },
+                      { value: +player.hp },
+                  ])
+
+                  bountyText = add([
+                      text("", {
+                          size: 24,
+                          width:300
+                      }),
+                      pos(width()-10, 92),
+                      origin('right'),
+                      layer('ui'),
+                      { value: nukes },
                   ])
                   explosion(s.pos.x, s.pos.y,120)
                   destroy(s)
@@ -737,7 +881,7 @@
                       rdir: rand(2)>1,
                       hp: 300,
                       type: 'masteroid',
-                      deadmsg: 'GAME OVER\nYOUR SHIP WAS CRUSHED BY THE CAPTAIN OF THE SYNDICATE GUARD'
+                      deadmsg: 'GAME OVER\nYOUR SHIP WAS CRUSHED BY THE GIANT ASTEROID'
 
                     }             
                   ]);
@@ -764,11 +908,11 @@
                   destroy(t)
                   destroy(instructions)
                   destroy(upgradesText)
-                  tween(startText, width()/2)
+                  tween(startText, width()*.5)
                   instructions = add([
-                  text('YOU ARE CAPTAIN OF THE EVANGELIST, A PIRATE SHIP ENGAGED IN ILLEGAL MINING IN A SECTOR RESERVED FOR THE MINING SYNDICATE. THE MORE ASTEROIDS YOU MINE, THE HIGHER THE PRICE ON YOUR HEAD. KEEP YOUR BOUNTY LOW TO AVOID SYNDICATE GUARDS AND MERCINARIES. JUDGEMENT WILL BE SWIFT SHOULD YOU BE CAUGHT, BUT RULES ARE MEANT TO BE BROKEN.',{
-                      size: 24,
-                      width:width()
+                  text('YOU ARE CAPTAIN OF THE EVANGELIST, A PIRATE SHIP ENGAGED IN ILLEGAL MINING IN A SECTOR RESERVED FOR THE MINING SYNDICATE. THE MORE ASTEROIDS YOU MINE, THE HIGHER THE PRICE ON YOUR HEAD. KEEP YOUR BOUNTY LOW TO AVOID SYNDICATE GUARDS AND MERCINARIES.\n\nUSE YOUR CREDITS TO UPGRADE YOUR SHIP AND LASERS OR BUY BRIBES TO KEEP THE BOUNTY AT ZERO',{
+                      size: 18,
+                      width:width()*.9
                   }),
                   area({ scale: 0.5 }),
                   pos(width()/2, height()*.666),
