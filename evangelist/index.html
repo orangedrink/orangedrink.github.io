@@ -863,11 +863,11 @@
                   destroy(upgradesText)
                   destroy(instructions)
                   asteroidChance = 5
-                  if(bribed) wait(120, ()=>{
+                  if(bribed) wait(30, ()=>{
                     //bribed=false
                     const masteroid = add([
                     sprite('asteroid3'),
-                    pos(width()/2, -90),
+                    pos(width()/2, -100),
                     area({scale:.8}),
                     body(),
                     scale(.9),
@@ -882,24 +882,27 @@
                       rvel:10-rand(20),
                       vel: 10,
                       rdir: rand(2)>1,
-                      hp: 300,
+                      hp: 100,
                       type: 'masteroid',
                       deadmsg: 'GAME OVER\nYOUR SHIP WAS CRUSHED BY THE GIANT ASTEROID'
 
                     }             
                   ]);
                   masteroid.onUpdate(()=>{
-                    if(masteroid.vel<40)masteroid.vel+=2
+                    if(masteroid.vel<40)masteroid.vel+=1.2 
                     masteroid.moveTo(masteroid.pos.x, masteroid.pos.y+=masteroid.vel*dt())
                     masteroid.angle = masteroid.rdir?masteroid.angle-masteroid.rvel*dt():masteroid.angle+masteroid.rvel*dt()
-                    if(masteroid.pos.y>height()+100||masteroid.pos.y<-80){
-                      masteroid.moveTo(width()/2, -80)
+                    if(masteroid.pos.y>height()+100||masteroid.pos.y<-100){
+                      masteroid.moveTo(width()/2, -100)
                     } 
                   })
                   masteroid.onCollide(player,(a)=>{
                     player.hp=0
                   })
-
+                  masteroid.onCollide('asteroid',(a)=>{
+                    destroy(a)
+                    explosion(a.pos.x, a.pos.y, 5, 150, 150, 150, 15)
+                  })
                   })
                 }
               })
