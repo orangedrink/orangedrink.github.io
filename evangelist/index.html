@@ -1147,12 +1147,15 @@
                     'canhit',
                     {
                       rvel:rand(-40)-80,
-                      vel: rand(200),
+                      vel: rand(300),
                       rdir: rand(2)>1,
                       hp: rand(4)+2,
                       type: 'asteroid'
                     }             
                   ]);
+                  if(rand(100)<20){
+                    asteroid.vel=+rand(1000)+200
+                  }
                   asteroid.onUpdate(()=>{
                     asteroid.moveTo(asteroid.pos.x, asteroid.pos.y+=asteroid.vel*dt())
                     asteroid.angle = asteroid.rdir?asteroid.angle-asteroid.rvel*dt():asteroid.angle+asteroid.rvel*dt()
