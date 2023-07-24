@@ -148,7 +148,7 @@
 
         }
 
-        scene('game', (instmsg) => {
+        scene('game', (instmsg, icolor) => {
             paused = true
               wait(1, ()=>{
                 paused = false
@@ -360,7 +360,7 @@
                             //player.yvel-=1
                           })
                           wait(3.15, ()=>{
-                            go('game', 'CONGRATULATIONS!\nYOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN')
+                            go('game', 'CONGRATULATIONS!\nYOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN', rgb(25, 255, 25))
                           })
                         }
                       }else if(e.type==='masteroid'){
@@ -376,7 +376,7 @@
                             //player.yvel-=1
                           })
                           wait(3.15, ()=>{
-                            go('game', 'CONGRATULATIONS\nYOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS')
+                            go('game', 'CONGRATULATIONS\nYOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS', rgb(25, 255, 25))
                           })
                         
                       }
@@ -427,6 +427,9 @@
                 pos(width()/2, height()*.666),
                 origin('center'),
             ])
+            if(icolor){
+              instructions.color = icolor
+            }
             let upgradesText
             if(credits>0){
               tween(startText, width()*.25)
@@ -665,7 +668,7 @@
                 }
                 destroy(player)
                 wait(3, ()=>{
-                  go('game', h.deadmsg)
+                  go('game', h.deadmsg, rgb(255, 0, 0))
                 }) 
             })
 
@@ -687,7 +690,7 @@
                 }
                 destroy(player)
                 wait(3, ()=>{
-                  go('game', 'GAME OVER\nYOUR SHIELDS WERE DEPLETED')
+                  go('game', 'GAME OVER\nYOUR SHIELDS WERE DEPLETED', rgb(255, 0, 0))
                 })
               }
             })
@@ -778,7 +781,7 @@
                             //player.yvel-=1
                           })
                           wait(3.15, ()=>{
-                            go('game', 'CONGRATULATIONS!\nYOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN')
+                            go('game', 'CONGRATULATIONS!\nYOU DEFEATED THE CAPTAIN OF THE SYNDICATE GUARDSMAN', rgb(25, 255, 25))
                           })
                         }
                       }else if(e.type==='masteroid'){
@@ -794,7 +797,7 @@
                             //player.yvel-=1
                           })
                           wait(3.15, ()=>{
-                            go('game', 'CONGRATULATIONS\nYOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS')
+                            go('game', 'CONGRATULATIONS\nYOU GOT THE BIG ROCK. IT WAS WORTH '+jackpot+' CREDITS', rgb(25, 255, 25))
                           })
                         
                       }
