@@ -770,7 +770,7 @@
                       yvel:0
                     }
                   ])
-                  explosion(player.pos.x, player.pos.y-(player.height/3), 16)
+                  if(rand(2)>1) explosion(player.pos.x, player.pos.y-(player.height/3), 1)
                   s.onUpdate(()=>{
                     if(laserSprite=='laser3'){
                       s.yvel=10-rand(20)
