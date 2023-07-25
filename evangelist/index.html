@@ -27,6 +27,7 @@
             //width:640,
             //height: 480,
             scale: 1,
+            font: "sinko",
         });
         loadRoot('assets/')
         loadSound("shoot", "laser-gun.mp3")
@@ -855,7 +856,7 @@
                   creditText = add([
                       text("CREDITS: "+credits, {
                           size: 24,
-                          width:300
+                          width:500
                       }),
                       pos(width()-10, 44),
                       origin('right'),
@@ -1095,7 +1096,6 @@
                     }             
                   ]);
                   guard.onUpdate(()=>{
-
                     if(player.pos.x>guard.pos.x){
                       if(guard.xvel<200) guard.xvel+=10
                     }else{
