@@ -415,7 +415,7 @@
             let bountyText
             let startText = add([
                 text('START GAME',{
-                    size: 24,
+                    size: 18, 
                 }),
                 area(),
                 pos(width()*.333, height()*.25),
@@ -424,7 +424,7 @@
             ])
             let instructionText = add([
                 text('INSTRUCTIONS',{
-                    size: 24,
+                    size: 18, 
                     width:300
                 }),
                 area(),
@@ -434,7 +434,7 @@
             ])
             let instructions = add([
                 text(instmsg||'USE ARROW KEYS TO MOVE\nHOLD SPACE TO FIRE LASERS AND CONTROL TO LAUNCH NUKES\n\nSHOOT ONE OF THE MENU OPTIONS ABOVE',{
-                    size: 24,
+                    size: 18, 
                     width:width()
                 }),
                 area({ scale: 0.5 }),
@@ -451,7 +451,7 @@
               explosion(width()/2, height()*.25, 40)
               upgradesText =  add([
                 text('UPGRADES\n['+credits+" CREDITS]",{
-                    size: 24,
+                    size: 18, 
                 }),
                 area(),
                 layer('ui'),
@@ -470,7 +470,7 @@
                 destroy(startText)
                 startText = add([
                     text('START GAME',{
-                        size: 24,
+                        size: 18, 
                     }),
                     area(),
                     pos(width()*.5, height()*.5),
@@ -484,7 +484,7 @@
                 destroy(instructions)
                 const creditText =  add([
                   text('CREDITS: '+credits, {
-                      size: 24,
+                      size: 18, 
                   }),
                   area(),
                   layer('ui'),
@@ -507,7 +507,7 @@
 
                 const laserText =  add([
                   text(laserUpgrades[laserSprite].text, {
-                      size: 24,
+                      size: 18, 
                   }),
                   area(),
                   layer('ui'),
@@ -533,7 +533,7 @@
 
                 const shipText =  add([
                   text(shipUpgrades[playerSprite].text, {
-                      size: 24,
+                      size: 18, 
                   }),
                   area(),
                   layer('ui'),
@@ -555,7 +555,7 @@
                 ]);
  */                const bribeText =  add([
                   text('PAY BRIBE\n[1600 CREDITS]', {
-                      size: 24,
+                      size: 18, 
                   }),
                   area(),
                   layer('ui'),
@@ -845,7 +845,7 @@
 
                   shieldText = add([
                       text("SHIELD: %"+getShieldPerent(), {
-                          size: 24,
+                          size: 18, 
                           width:300
                       }),
                       pos(width()-10, 20),
@@ -855,7 +855,7 @@
                   ])
                   creditText = add([
                       text("CREDITS: "+credits, {
-                          size: 24,
+                          size: 18, 
                           width:500
                       }),
                       pos(width()-10, 44),
@@ -865,7 +865,7 @@
                   ])
                   nukesText = add([
                       text("NUKES: "+nukes, {
-                          size: 24,
+                          size: 18, 
                           width:300
                       }),
                       pos(width()-10, 68),
@@ -876,7 +876,7 @@
 
                   bountyText = add([
                       text("", {
-                          size: 24,
+                          size: 18, 
                           width:300
                       }),
                       pos(width()-10, 92),
