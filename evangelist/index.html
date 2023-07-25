@@ -29,6 +29,11 @@
             scale: 1,
         });
         loadRoot('assets/')
+        loadSound("shoot", "laser-gun.mp3")
+        loadSound("explosion", "explosion.mp3")
+        loadSound("crunch", "crunch.mp3")
+        loadSound("nuke", "nuke.mp3")
+        loadSound("start", "game-start.mp3")
         loadSprite('playerl1', 'player_l1.png')
         loadSprite('playerl2', 'player_l2.png')
         loadSprite('playerl3', 'player_l3.png')
@@ -256,7 +261,9 @@
               })
             }
             function explosion(x, y, count, c1=235, c2=141, c3=243, size=10){
+
               for(i=0;i<count;i++){
+
                 const tsize = rand(5)+size
                 const xpl = add([
                   circle(tsize/3, tsize/3),
@@ -284,6 +291,7 @@
               }
             }
             function nuke(x, y, count, c1=235, c2=141, c3=243, size=10){
+
               const n = add([
                   sprite('powerup1'),
                   circle(7),
@@ -311,6 +319,11 @@
               })
             }
             function nukexpl(x, y, count, c1=235, c2=141, c3=243, size=10){
+              const nukeSound = play("nuke", {
+                      volume: 2,
+                      loop: false,
+               })
+
               for(i=0;i<count;i++){
                 const tsize = rand(5)+size
                 const xpl = add([
@@ -330,7 +343,7 @@
                 ])
                 xpl.onUpdate(()=>{
                   //destroy(thruster)
-                  xpl.ttl-=.25
+                  xpl.ttl-=.5
                   xpl.scale = xpl.ttl*-.1
                   xpl.moveTo(xpl.pos.x+(xpl.xvel*4), xpl.pos.y+(xpl.yvel*4))
                   if(xpl.ttl<0){
@@ -553,6 +566,11 @@
                 ])
                 
                 startText.onCollide('shot', function(s){
+                  const start = play("start", {
+                      volume: 1,
+                      loop: false
+                  })
+
                   destroy(creditText)
                   destroy(laserText)
                   destroy(shipText)
@@ -728,13 +746,17 @@
                     player.nukecooldown=false
                   })
                   
-                  nuke(player.pos.x, player.pos.y, 40)
+                  nuke(player.pos.x, player.pos.y, 100)
                 }
               })
               if(!paused&&isKeyDown('space')){
                 let t = time()
                 if(t-player.sdelta>cooldown){
                   player.sdelta = t
+                  const shotSound = play("shoot", {
+                      volume: 0.05,
+                      loop: false
+                  })
                   const s = add([
                     sprite(laserSprite),
                     pos(player.pos.x, player.pos.y-16),
@@ -747,7 +769,7 @@
                       yvel:0
                     }
                   ])
-                  if(rand(3)<1) explosion(player.pos.x, player.pos.y-(player.height/2), 1)
+                  explosion(player.pos.x, player.pos.y-(player.height/3), 16)
                   s.onUpdate(()=>{
                     if(laserSprite=='laser3'){
                       s.yvel=10-rand(20)
@@ -815,6 +837,11 @@
               onCollide('startText', 'shot', (s,t)=>{
                 if(!startCollideFlag){
                   startCollideFlag = true
+                  const start = play("start", {
+                      volume: 1,
+                      loop: false
+                  })
+
                   shieldText = add([
                       text("SHIELD: %"+getShieldPerent(), {
                           size: 24,
