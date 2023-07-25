@@ -87,19 +87,19 @@
         const laserUpgrades ={
           laser1:{
             cooldown:.25,
-            cost: 900,
+            cost: 700,
             sprite:'laser2',
             text: 'LASER UPGRADE\n[700 CREDITS]'
           },
           laser2:{
             cooldown:.15,
-            cost: 900,
+            cost: 2200,
             sprite:'laser3',
             text: 'LASER UPGRADE\n[2200 CREDITS]'
           },
           laser3:{
             cooldown:.1,
-            cost: 900,
+            cost: 9000,
             sprite:'laser3',
             text: 'NUKE\n[9000 CREDITS]'
           },
@@ -582,9 +582,9 @@
 //                  destroy(bribeIcon)
                 })
                 tween(laserText, width()*.25)
-                validate(laserText, credits>laserUpgrades[laserSprite].cost)
+                validate(laserText, credits>=laserUpgrades[laserSprite].cost)
                 tween(shipText, width()/2)
-                validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                validate(shipText, credits>=shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
                 tween(bribeText, width()*.75)
                 validate(bribeText, credits>1600)
                 tween(creditText, width()*.5)
@@ -600,13 +600,13 @@
                     spawnPowerup('laser', pos.x, pos.y)
                     laserText.moveTo(-500, laserText.pos.y)
                     tween(laserText, width()*.25, .5)
-                    validate(laserText, credits>laserUpgrades[laserSprite].cost)
-                    validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
-                    validate(bribeText, !bribed&&credits>1600)
+                    validate(laserText, credits>=laserUpgrades[laserSprite].cost)
+                    validate(shipText, credits>=shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                    validate(bribeText, !bribed&&credits>=1600)
                     explosion(pos.x, pos.y, 40)
                     wait(1.25, ()=>{
                       laserText.ready = true;
-                      validate(laserText, credits>laserUpgrades[laserSprite].cost)
+                      validate(laserText, credits>=laserUpgrades[laserSprite].cost)
                     })
                   }
                 })
@@ -623,13 +623,13 @@
                     spawnPowerup('ship', pos.x, pos.y)
                     shipText.moveTo(-500, shipText.pos.y)
                     tween(shipText, width()*.5, .5)
-                    validate(laserText, credits>laserUpgrades[laserSprite].cost)
-                    validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
-                    validate(bribeText, !bribed&&credits>1600)
+                    validate(laserText, credits>=laserUpgrades[laserSprite].cost)
+                    validate(shipText, credits>=shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                    validate(bribeText, !bribed&&credits>=1600)
                     explosion(pos.x, pos.y, 40)
                     wait(1.25, ()=>{
                       shipText.ready = true;
-                      validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                      validate(shipText, credits>=shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
                     })
                   }
                 })
@@ -645,13 +645,13 @@
                     bribeText.moveTo(-500, bribeText.pos.y)
                     tween(bribeText, width()*.75, .5)
                     explosion(pos.x, pos.y, 40)
-                    validate(laserText, credits>laserUpgrades[laserSprite].cost)
-                    validate(shipText, credits>shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
-                    validate(bribeText, !bribed&&credits>1600)
+                    validate(laserText, credits>=laserUpgrades[laserSprite].cost)
+                    validate(shipText, credits>=shipUpgrades[playerSprite].cost&&playerSprite!=shipUpgrades[playerSprite].sprite)
+                    validate(bribeText, !bribed&&credits>=1600)
                     bribeText.color = rgb(rgb(160, 160, 160))
                     wait(1.25, ()=>{
                       bribeText.ready = true; 
-                      validate(bribeText, !bribed&&credits>1600)
+                      validate(bribeText, !bribed&&credits>=1600)
                     })
 
 
