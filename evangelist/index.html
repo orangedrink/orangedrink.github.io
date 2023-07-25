@@ -67,21 +67,21 @@
             cost: 900,
             hp:15,
             sprite:'playerl3',
-            text: 'SHIP UPGRADE\n(900 CREDITS)'
+            text: 'SHIP UPGRADE\n[900 CREDITS]'
           },
           playerl3:{
             speed:60,
             cost: 3000,
             hp:30,
             sprite: 'playerl5',
-            text: 'SHIP UPGRADE 2\n(3000 CREDITS)'
+            text: 'SHIP UPGRADE 2\n[3000 CREDITS]'
           },
           playerl5:{
             speed:90,
             cost: 3000,
             hp:30,
             sprite: 'playerl5',
-            text: 'SHIP UPGRADED\n(3000 CREDITS)'
+            text: 'SHIP UPGRADED\n[3000 CREDITS]'
           },
         }
         const laserUpgrades ={
@@ -89,19 +89,19 @@
             cooldown:.25,
             cost: 900,
             sprite:'laser2',
-            text: 'LASER UPGRADE\n(700 CREDITS)'
+            text: 'LASER UPGRADE\n[700 CREDITS]'
           },
           laser2:{
             cooldown:.15,
             cost: 900,
             sprite:'laser3',
-            text: 'LASER UPGRADE\n(2200 CREDITS)'
+            text: 'LASER UPGRADE\n[2200 CREDITS]'
           },
           laser3:{
             cooldown:.1,
             cost: 900,
             sprite:'laser3',
-            text: 'NUKE\n(9000 CREDITS)'
+            text: 'NUKE\n[9000 CREDITS]'
           },
         }
 
@@ -450,7 +450,7 @@
               tween(instructionText, width()*.75)
               explosion(width()/2, height()*.25, 40)
               upgradesText =  add([
-                text('UPGRADES\n('+credits+" CREDITS)",{
+                text('UPGRADES\n['+credits+" CREDITS]",{
                     size: 24,
                 }),
                 area(),
@@ -554,7 +554,7 @@
                     origin('center'),
                 ]);
  */                const bribeText =  add([
-                  text('PAY BRIBE\n(1600 CREDITS)', {
+                  text('PAY BRIBE\n[1600 CREDITS]', {
                       size: 24,
                   }),
                   area(),
