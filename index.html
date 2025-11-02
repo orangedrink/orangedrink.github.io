@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orangedrink's game spot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .games-list {
+            list-style: none;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .game-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .game-item:last-child {
+            border-bottom: none;
+        }
+        
+        .game-link {
+            display: flex;
+            align-items: center;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s ease;
+            gap: 20px;
+        }
+        
+        .game-link:hover {
+            background: #f5f5f5;
+            padding-left: 35px;
+        }
+        
+        .game-icon {
+            font-size: 2.5em;
+            flex-shrink: 0;
+            width: 60px;
+            text-align: center;
+        }
+        
+        .game-info {
+            flex: 1;
+        }
+        
+        .game-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .game-description {
+            font-size: 0.95em;
+            color: #666;
+        }
+        
+        .game-arrow {
+            font-size: 1.5em;
+            color: #999;
+            transition: transform 0.2s ease;
+        }
+        
+        .game-link:hover .game-arrow {
+            transform: translateX(5px);
+            color: #667eea;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .game-link {
+                padding: 15px 20px;
+            }
+            .game-icon {
+                font-size: 2em;
+                width: 50px;
+            }
+            .game-title {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 orangedrink's game spot</h1>
+            <div class="subtitle">⭐ Select a game to play ⭐</div>
+        </header>
+        
+        <ul class="games-list">
+            <!--li class="game-item">
+                <a href="dinotek/" class="game-link" target="_blank">
+                    <div class="game-icon">🦖</div>
+                    <div class="game-info">
+                        <div class="game-title">Dinotek</div>
+                        <div class="game-description">Blast through space with prehistoric power!</div>
+                    </div>
+                    <div class="game-arrow">→</div>
+                </a>
+            </li-->
+            
+            <li class="game-item">
+                <a href="evangelist/" class="game-link" target="_blank">
+                    <div class="game-icon">🛸</div>
+                    <div class="game-info">
+                        <div class="game-title">Evangelist</div>
+                        <div class="game-description">Conduct an illegal mining operation in space.</div>
+                    </div>
+                    <div class="game-arrow">→</div>
+                </a>
+            </li>
+            
+            <!--li class="game-item">
+                <a href="moncondo/" class="game-link" target="_blank">
+                    <div class="game-icon">🏠</div>
+                    <div class="game-info">
+                        <div class="game-title">Moncondo</div>
+                        <div class="game-description">Monster management meets home sweet home!</div>
+                    </div>
+                    <div class="game-arrow">→</div>
+                </a>
+            </li-->
+            
+            <li class="game-item">
+                <a href="monman/" class="game-link" target="_blank">
+                    <div class="game-icon">👻</div>
+                    <div class="game-info">
+                        <div class="game-title">Monman</div>
+                        <div class="game-description">Battle monsters in a spooky mansion!</div>
+                    </div>
+                    <div class="game-arrow">→</div>
+                </a>
+            </li>
+            
+            <li class="game-item">
+                <a href="pokeapi/" class="game-link" target="_blank">
+                    <div class="game-icon">⚡</div>
+                    <div class="game-info">
+                        <div class="game-title">PokeAPI</div>
+                        <div class="game-description">Catch 'em all with real Pokemon data!</div>
+                    </div>
+                    <div class="game-arrow">→</div>
+                </a>
+            </li>
+            
+            <li class="game-item">
+                <a href="xenosea/" class="game-link" target="_blank">
+                    <div class="game-icon">🌊</div>
+                    <div class="game-info">
+                        <div class="game-title">Xenosea</div>
+                        <div class="game-description">Dive deep into underwater alien encounters!</div>
+                    </div>
+                    <div class="game-arrow">→</div>
+                </a>
+            </li>
+        </ul>
+        
+        <footer>
+            Made with 💖 by orangedrink | Play, Enjoy, Repeat! 🎲
+        </footer>
+    </div>
+</body>
+</html>
